@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="147.329" height="103.129" viewBox="0 0 147.329 103.129">
+  <g id="Hamburger" transform="translate(7.365 7.365)">
+    <line id="Line_1" data-name="Line 1" x2="132.6" transform="translate(0 44.2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="14.729"/>
+    <line id="Line_2" data-name="Line 2" x2="132.6" stroke-width="14.729" stroke="#000" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <line id="Line_3" data-name="Line 3" x2="132.6" transform="translate(0 88.4)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="14.729"/>
+  </g>
+</svg>
