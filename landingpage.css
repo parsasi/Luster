@@ -1,0 +1,35 @@
+.landingpage {
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+}
+
+.landing {
+    font-family: "Raleway", sans-serif;
+    display: inline-flex;
+    flex-direction: column;
+    width: 60vw;
+    height: auto;
+    padding: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #B2DFDB;
+    border-radius: 15px;
+    position: relative;
+    margin-left: 5%;
+}
+
+.landing_welcome {
+    padding-bottom: 20px;
+}
+
+.landing_reveal span {
+    display: flex;
+    flex-direction: column;
+    font-size: 15pt;
+    padding-bottom: 30px;
+}
+
+.landing_reveal2, .landing_reveal4 {
+    text-align: right;
+}
