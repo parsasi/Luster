@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link href="menu.css" rel="stylesheet" type="text/css">
+    <link href="contactpage.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="contactpage">
+
+        <!-- START MENU COMPONENT -->
+        <div class="menu">
+            <div class="menu_logo">
+                <img src="imgs/Logo.svg" />
+            </div>
+            <ul class="menu_links">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Discovery</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">FAQ/Help</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+        <!-- END MENU COMPONENT -->
+
+        <!-- START CONTACT COMPONENT -->
+            <div class="contact">
+                <div class="contact_title">Contact Us</div>
+                <div class="contact_msg">If you have any questions or concerns and wish to contact us, you can do so by:<br/>
+                    <br/>
+                    Email: lustr@lustr.com<br/>
+                    Phone: 111-111-1111
+                </div>
+
+                <form class="contact_form">
+                    <div class="contact_form_name">
+                        <label for="contact_form_name">Full Name:</label>
+                        <input type="text" id="contact_form_name" placeholder="Full Name">
+                    </div>
+                    <div class="contact_form_email">
+                        <label for="contact_form_email">Email:</label>
+                        <input type="email" id="contact_form_email" placeholder="Email">
+                    </div>
+                    <div class="contact_form_message">
+                        <label for="contact_form_message">Message:</label>
+                        <textarea id="contact_form_message" name="contact_form_message" placeholder="Message"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" id="contact_form_submit">
+                    </div>
+                </form>
+                
+            </div>
+        <!-- END CONTACT COMPONENT -->
+        
+    </div>
+</body>
+</html>
