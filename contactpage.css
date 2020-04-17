@@ -9,9 +9,9 @@
     display: inline-flex;
     flex-direction: column;
     width: 60vw;
-    height: auto;
-    padding: 25px;
-    padding-left: 50px;
+    height: 80vh;
+    padding: 20px;
+    padding-left: 30px;
     padding-right: 50px;
     background-color: #B2DFDB;
     border-radius: 15px;

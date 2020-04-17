@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     width: 200px;
-    height: auto;
+    height: 80vh;
     padding: 20px;
     border-radius: 15px;
     background-color: #B2DFDB;
@@ -14,14 +14,27 @@
 .menu_logo {
     width: 20vw;
     height: auto;
+    margin-bottom: -50px;
 }
 
 .menu_links a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     font-size: x-large;
     text-decoration: none;
     color: black;
     padding-bottom: 15px;
+    position: relative;
+    left: -20px;
+}
+
+.menu_links li {
+    list-style-type: none;
+}
+
+
+li a:hover {
+    color: #979CB3;
 }
