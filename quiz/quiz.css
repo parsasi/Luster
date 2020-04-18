@@ -1,0 +1,93 @@
+.quizmainpage {
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+}
+
+.quizmain {
+    font-family: "Raleway", sans-serif;
+    display: inline-flex;
+    flex-direction: column;
+    width: 60vw;
+    height: 80vh;
+    padding: 25px;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #B2DFDB;
+    border-radius: 15px;
+    position: relative;
+    margin-left: 5%;
+}
+
+.quizmain_title {
+    padding-bottom: 50px;
+}
+
+.quizmain_text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 15pt;
+    margin-bottom: 100px;
+}
+
+.middlesection div {
+    align-self: center;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.quizquestion {
+    font-size: 20pt;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+/* START BUTTONS CSS */
+
+.big-teal-button-box {
+    width: 250px;
+    align-self: center;
+    justify-content: center;
+}
+
+.teal-button-box {
+    width: 100px;
+    justify-content: center;
+}
+
+.nextbutton {
+    display: flex;
+    align-self: flex-end;
+}
+
+.backbutton {
+    position: relative;
+    bottom: -70px;
+}
+
+.mid-quiz-button-box {
+    align-self: center;
+    margin-bottom: 5pt;
+}
+
+/* END BUTTONS CSS */
+
+
+/* START IMG CSS */
+
+.drink_img {
+    margin-bottom: 8px;
+}
+
+.cannabis_img {
+    margin-bottom: 6px;
+}
+
+.smoke_img {
+    margin-bottom: 28px;
+}
+
+/* END IMG CSS */
