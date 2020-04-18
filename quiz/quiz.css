@@ -44,11 +44,14 @@
     margin-bottom: 50px;
 }
 
+.progressbarfin {
+    margin-top: 60px;
+}
 
 /* START BUTTONS CSS */
 
 .big-teal-button-box {
-    width: 250px;
+    width: 300px;
     align-self: center;
     justify-content: center;
 }
