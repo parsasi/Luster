@@ -45,7 +45,7 @@ export const StyleguideButton = () => <div>
     color="#FFFFFF"
     text="SUBMIT"
     backgroundColor="#FFD9DF"
-    border="#353C58 3px solid"
+    border="#979CB3 3px solid"
   />
 
 </div>;
