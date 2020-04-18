@@ -50,10 +50,18 @@ export const StyleguideButton = () => <div>
 
 </div>;
 export const StyleguideForm = () => <Form />;
-export const StyleguideHeading = () => <Heading />;
+export const StyleguideHeading = () => <div>
+  <Heading />
+  <Heading
+    text="Normal"
+    fontSize="25px" />
+  <Heading
+    text="Hover"
+    fontSize="25px" />
+</div>;
 export const StyleguideHyperlink = () => <div>
   <Hyperlink />
-  <Hyperlink 
-  color="#FFFFFF"/>
-  </div>;
+  <Hyperlink
+    color="#FFFFFF" />
+</div>;
 export const StyleguideIcon = () => <Icon />;
