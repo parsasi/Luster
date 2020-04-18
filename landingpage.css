@@ -33,3 +33,10 @@
 .landing_reveal2, .landing_reveal4 {
     text-align: right;
 }
+
+.landing-page-buttons-box {
+    display: inline-flex;
+    justify-content: space-around;
+    position: relative;
+    top: 5%;
+}
