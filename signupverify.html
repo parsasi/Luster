@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Page</title>
+    <link href="menu.css" rel="stylesheet" type="text/css">
+    <link href="./buttons/teal-buttons.css" rel="stylesheet" type="text/css">    
+    <link href="signupverify.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="verificationpage">
+
+        <!-- START MENU COMPONENT -->
+        <div class="menu">
+            <div class="menu_logo">
+                <img src="imgs/Logo.svg" />
+            </div>
+            <ul class="menu_links">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Discovery</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">FAQ/Help</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+        <!-- END MENU COMPONENT -->
+
+        <!-- START VERIFICATION COMPONENT -->
+            <div class="verification">
+                <div class="verification_title">Sign Up</div>
+                <div class="verification_msg">
+                    Your account has been created! Please check your email for a verification code.
+                </div>
+
+                <form class="verification_form">
+                    <div class="verification_form_code">
+                        <input type="text" id="verification_form_code" placeholder="Verification Code">
+                    </div>
+                    <div>
+                        <input type="submit" class="teal-button-box" id="verification_form_submit">
+                    </div>
+                </form>
+            </div>
+        <!-- END VERIFICATION COMPONENT -->
+        
+    </div>
+</body>
+</html>
