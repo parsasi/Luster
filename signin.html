@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link href="menu.css" rel="stylesheet" type="text/css">
+    <link href="signin.css" rel="stylesheet" type="text/css">
+    <link href="./buttons/teal-buttons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="signinpage">
+
+        <!-- START MENU COMPONENT -->
+        <div class="menu">
+            <div class="menu_logo">
+                <img src="imgs/Logo.svg" />
+            </div>
+            <ul class="menu_links">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Discovery</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">FAQ/Help</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+        <!-- END MENU COMPONENT -->
+
+        <!-- START SIGN UP COMPONENT -->
+            <div class="signin">
+                <div class="signin_title">Sign In</div>
+                <div class="signin_msg">
+                    Please enter your email and password.
+                </div>
+
+                <form class="signin_form">
+                    <div class="signin_form_email">
+                        <label for="signin_form_email">Email Address:</label>
+                        <input type="email" id="signin_form_email" placeholder="Email Address">
+                    </div>
+                    <div class="signin_form_password">
+                        <label for="signin_form_password">Password:</label>
+                        <input type="password" id="signin_form_password" placeholder="Password">
+                    </div>
+                    <div>
+                        <input type="submit" id="signin_form_submit" class="teal-button-box">
+                    </div>
+                </form>
+            </div>
+        <!-- END SIGN UP COMPONENT -->
+        
+    </div>
+</body>
+</html>
