@@ -1,0 +1,44 @@
+#styleguide_icon img {
+  max-width: 50px;
+  margin: 20px;
+}
+
+#styleguide_icon {
+  display: flex;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+}
+
+.styleguide_icon_grp1 {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+}
+
+.styleguide_icon_grp2 {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  margin-left: 100px;
+}
+
+.styleguide_icon_img {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  padding: 30px;
+  text-align: center;
+}
+.styleguide_icon_text {
+  margin-top: 20px;
+}
+
+.styleguide_icon_text span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 33px;
+  text-align: left;
+}

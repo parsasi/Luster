@@ -1,0 +1,12 @@
+.styleguide_buttons {
+  display: flex;
+  font-size:35px;
+  width: 200px;
+  height: 80px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  margin: 20px;
+  font-weight: lighter;
+}

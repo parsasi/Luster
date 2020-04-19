@@ -1,0 +1,14 @@
+#styleguide_hyperlink {
+  display: flex;
+  background-color: #FFE8D1;
+  width: 600px;
+  height: 100px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.styleguide_hyperlink_text {
+  padding: 30px 5px 0px 10px;
+}
