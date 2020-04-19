@@ -8,6 +8,11 @@
     border-radius: 10px;
 }
 
+.teal-button-box::selection{
+    background: none;
+    color: none;
+}
+
 .big-teal-button-box {
     display: inline-flex;
     padding: 15px 40px;
@@ -16,4 +21,9 @@
     font-family: 'Raleway', sans-serif;
     font-size: 30pt;
     border-radius: 10px;
+}
+
+.big-teal-button-box::selection{
+    background: none;
+    color: none;
 }

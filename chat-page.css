@@ -35,6 +35,8 @@
     background-color:  #E7FFF8;
     margin:10px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .individual-chat {
@@ -50,7 +52,7 @@
 }
 
 .individual-chat:hover {
-    background-color: lightsalmon;
+    background-color: #B2DFDB;
 }
 
 .chat-name {
@@ -58,6 +60,7 @@
 }
 
 .in-chat-profile {
+    flex-grow: 1;
     margin: 10px;
     padding: 15px;
     max-width: 100%;
@@ -93,7 +96,76 @@
 }
 
 .message-boxes {
-    width: 90%;
-    height: 90%;
+    margin: 10px;
+    padding: 15px;
+    max-width: 100%;
+    overflow: auto;
     background-color: white;
+    font-size: 13pt;
+    border-radius: 15px;
+    flex-grow: 2;
+}
+
+.bubbleWrapper {
+	padding: 10px 10px;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+	align-self: flex-end;
+    color: black;
+}
+.inlineContainer {
+    display: inline-flex;
+}
+.inlineContainer.own {
+    flex-direction: row-reverse;
+}
+.inlineIcon {
+    width:20px;
+    object-fit: contain;
+}
+.ownBubble {
+	min-width: 60px;
+	max-width: 700px;
+	padding: 14px 18px;
+    margin: 6px 8px;
+	background-color: #B2DFDB;
+	border-radius: 16px 16px 0 16px;
+	border: 1px solid #443f56;
+ 
+}
+.otherBubble {
+	min-width: 60px;
+	max-width: 700px;
+	padding: 14px 18px;
+    margin: 6px 8px;
+	background-color: #E7FFF8;
+	border-radius: 16px 16px 16px 0;
+	border: 1px solid #54788e;
+  
+}
+.own {
+	align-self: flex-end;
+}
+.other {
+	align-self: flex-start;
+}
+span.own,
+span.other{
+    font-size: 14px;
+    color: grey;
+}
+
+.type-and-send-box {
+    display: flex;
+    margin: 10px;
+}
+
+.message-input {
+    flex-grow: 10;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: 1px solid #979CB3;
+    padding: 10px;
+    font-size: 16pt;
 }
