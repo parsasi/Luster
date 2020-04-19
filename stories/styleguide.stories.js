@@ -5,6 +5,7 @@ import Form from '../comps/Styleguide/Form';
 import Heading from '../comps/Styleguide/Heading';
 import Hyperlink from '../comps/Styleguide/Hyperlink';
 import Icon from '../comps/Styleguide/Icon';
+import Pages from '../comps/Styleguide/Pages';
 
 
 
@@ -65,3 +66,4 @@ export const StyleguideHyperlink = () => <div>
     color="#FFFFFF" />
 </div>;
 export const StyleguideIcon = () => <Icon />;
+export const StyleguidePages = () => <Pages />;

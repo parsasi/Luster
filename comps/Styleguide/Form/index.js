@@ -2,8 +2,9 @@ import React from 'react';
 
 import './form.css';
 
-const Form = ({ color, text, backgroundColor, border }) =>
-  <div id="styleguide_form">
+const Form = ({ color, text, backgroundColor, border, margin}) =>
+  <div id="styleguide_form"
+  style={{margin: margin}}>
     <p>First Name</p>
     <input className="styleguide_inputs1" placeholder="First Name"></input>
     <p>Email Address</p>
@@ -23,7 +24,8 @@ Form.defaultProps = {
   color: "#FFFFFF",
   text: "SIGN UP",
   backgroundColor: "#B2DFDB",
-  border: ""
+  border: "",
+  margin: ""
 }
 
 export default Form;
