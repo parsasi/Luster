@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link href="menu.css" rel="stylesheet" type="text/css">
+    <link href="landingpage.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="edit-profile.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="./buttons/other-buttons.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="edit-profile-page">
+
+        <!-- START MENU COMPONENT -->
+        <div class="menu">
+            <div class="menu_logo">
+                <img src="imgs/Logo.svg" />
+            </div>
+            <ul class="menu_links">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Discovery</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">FAQ/Help</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+        <!-- END MENU COMPONENT -->
+
+        <!-- START EDIT PROFILE COMPONENT-->
+        <div class="edit-profile-page-box">
+            <div class="edit-profile-top">
+                <div class="profile-name">Alecia</div>
+                <!-- Finish button -->
+                <div class="white-button-outer finish-button"> 
+                    Finish
+                </div>
+            </div>
+
+            <div class="profile-content">
+
+                <!-- left side start-->
+                <div class="edit-profile-images">
+                    <div class="all-profile-images">
+                        <div class="individual-image main">
+                            <img class="remove-image" src="./imgs/X.png">
+                            <img class="profile-pic " src="./imgs/testimgs/aleciaprof.jpg">
+                            <img class="primary-image" src="./imgs/Group 55.png">
+                        </div>
+                        <div class="individual-image">
+                            <img class="remove-image" src="./imgs/X.png">
+                            <img class="profile-pic" src="./imgs/testimgs/alecia2.jpg">
+                        </div>
+                        <div class="individual-image">
+                            <img class="remove-image" src="./imgs/X.png">
+                            <img class="profile-pic" src="./imgs/testimgs/alecia3.jpg">
+                        </div>
+                        <div class="individual-image">
+                            <img class="remove-image" src="./imgs/X.png">
+                            <img class="profile-pic" src="./imgs/testimgs/alecia4.jpg">
+                        </div>
+                        <div class="individual-image">
+                            <img class="remove-image" src="./imgs/X.png">
+                            <img class="profile-pic" src="./imgs/testimgs/alecia5.jpg">
+                        </div> 
+                    </div>
+                    <!-- Upload Button -->
+                    <div class="white-button-outer upload-button">
+                        Upload
+                    </div>
+                    <div class="photo-info">
+                        <img  src="./imgs/Group 55.png">
+                        is your primary photo
+                    </div>
+                </div>
+                <!-- left side end -->
+
+                <!-- right side start-->
+                <div class="edit-profile-info">
+                    <div class="edit-profile-note">
+                        * Information is grey cannot be edited
+                    </div> <br>
+
+                    <div class="profile-info"><b>Age:</b> <span class="info-greyed">24</span></div>
+                    <div class="profile-info"><b>Gender:</b> <span class="info-greyed">Female</span></div> 
+                    <div class="profile-info"><b>Location:</b> <span class="location">Burnaby <img src="imgs/aim.png"></span></div>
+                    <label class="profile-info" for="looking-for"><b>Looking For:</b></label>
+                        <select class="info-drop-down profile-info" name="looking-for">
+                            <option value="relationship" selected>Relationship</option>
+                            <option value="casual">Casual</option>
+                            <option value="marriage">Marriage</option>
+                            <option value="Don't Know">Don't Know</option>
+                        </select> <br>
+                    <label class="profile-info" for="Exercise Level"><b>Exercise Level:</b></label>
+                        <select class="info-drop-down profile-info" name="Exercise Level">
+                            <option value="relationship" selected>Active</option>
+                            <option value="casual">Sometimes</option>
+                            <option value="marriage">Never</option>
+                        </select> <br>
+                    <label class="profile-info" for="Alchol"><b>Alchol:</b></label>
+                        <select class="info-drop-down profile-info" name="Alchol">
+                            <option value="relationship" selected>Socially</option>
+                            <option value="casual">Frequently</option>
+                            <option value="marriage">Never</option>
+                        </select> <br>
+                    <label class="profile-info" for="Sign"><b>Sign:</b></label>
+                        <select class="info-drop-down profile-info" name="Sign">
+                            <option value="Aquarius">Aquarius</option>
+                            <option value="Pieces">Pieces</option>
+                            <option value="Aries">Aries</option>
+                            <option value="Taurus" selected>Taurus</option>
+                            <option value="Gemini">Gemini</option>
+                            <option value="Cancer">Cancer</option>
+                            <option value="Leo">Leo</option>
+                            <option value="Virgo">Virgo</option>
+                            <option value="Libra">Libra</option>
+                            <option value="Scorpio">Scorpio</option>
+                            <option value="Sagittarius">Sagittarius</option>
+                            <option value="Capricorn">Capricorn</option>
+                        </select> <br>
+                    <label class="profile-info" for="Pets"><b>Pets:</b></label>
+                        <select class="info-drop-down profile-info" name="Pets">
+                            <option value="relationship" selected>Lots</option>
+                            <option value="casual">Dogs</option>
+                            <option value="marriage">Cats</option>
+                            <option value="Don't Know">Other</option>
+                        </select> <br>
+                    <label class="profile-info" for="Cannabis"><b>Cannabis:</b></label>
+                        <select class="info-drop-down profile-info" name="Cannabis">
+                            <option value="relationship" selected>Socially</option>
+                            <option value="casual">Frequently</option>
+                            <option value="marriage">Never</option>
+                        </select>
+                </div>
+                <!-- right sid end -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
