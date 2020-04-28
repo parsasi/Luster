@@ -7,7 +7,7 @@ import {Link, NavLink } from 'react-router-dom';
 export default (props) => (
     <div class="menu">
             <div class="menu_logo">
-                <img src="imgs/Logo.svg" />
+                <img src="imgs/logo.svg" />
             </div>
             <ul class="menu_links">
                 <li><NavLink className="menu-nav-link" activeClassName="active-link" to="/">Profile</NavLink></li>
