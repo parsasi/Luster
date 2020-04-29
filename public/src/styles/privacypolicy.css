@@ -1,0 +1,35 @@
+.privacypage {
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+}
+
+.privacy {
+    font-family: "Raleway", sans-serif;
+    display: inline-flex;
+    flex-direction: column;
+    width: 60vw;
+    height: 80vh;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 50px;
+    background-color: #B2DFDB;
+    border-radius: 15px;
+    position: relative;
+    margin-left: 5%;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.privacy_title {
+    font-size: 30pt;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.privacy_msg {
+    display: flex;
+    flex-direction: column;
+    font-size: 15pt;
+    padding-bottom: 15px;
+}

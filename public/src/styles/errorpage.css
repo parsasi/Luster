@@ -1,0 +1,28 @@
+.errorpage {
+    font-family: "Raleway", sans-serif;
+    display: inline-flex;
+    width: 80%;
+    height: 50vh;
+    padding: 5%;
+    background-color: #B2DFDB;
+    border-radius: 15px;
+    margin: 5%;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.error {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.error_title {
+    font-size: 30pt;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.error_msg {
+    font-size: 25pt;
+}

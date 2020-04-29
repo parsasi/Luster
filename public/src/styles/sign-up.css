@@ -1,0 +1,59 @@
+.signup-page {
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+}
+
+.signup-box {
+    font-family: "Raleway", sans-serif;
+    display: inline-flex;
+    flex-direction: column;
+    width: 60vw;
+    height: auto;
+    padding: 25px;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #B2DFDB;
+    border-radius: 15px;
+    position: relative;
+    margin-left: 5%;
+}
+
+.signup-title {
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    display: inline-flex;
+    justify-content: center;
+    font-size: 30pt;
+}
+
+.required {
+    color: red;
+}
+
+.gender-preference {
+    display: inline-flex;
+}
+
+.gender-box{
+    margin-right: 40px;
+}
+
+.signup-input {
+    background-color: #E7FFF8;
+    padding: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20pt;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.signup-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20pt;
+}
+
+#signup-submit {
+    position: relative;
+    left: 40%;
+}
