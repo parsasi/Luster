@@ -3,13 +3,13 @@ import ChatsAllChats from './ChatsAllChats'
 import '../styles/chat-page.css'
 import InChatProfile from './InChatProfile'
 import SingleText from '../components/SingleText'
-
+import ChatInput from '../components/ChatInput'
 export default (props) => (
 <div className="chat-page-box">
     <div class="all-chats">
-        <ChatsAllChats />
-        <ChatsAllChats />
-        <ChatsAllChats />
+        <ChatsAllChats name="Kevin Heart" />
+        <ChatsAllChats name="Alison Lee" />
+        <ChatsAllChats name="Karen"/>
     </div>
     <div className="current-chat">
         <InChatProfile />
@@ -19,10 +19,7 @@ export default (props) => (
             <SingleText text="I am good! How are you?" time="08:55" own={true}/>
 
         </div>
-        <div class="type-and-send-box">
-            <input class="message-input" type="text"/>
-            <div class="sendMessage-button-outer">Send</div>
-        </div>
+        <ChatInput />
     </div>
 </div>
 )

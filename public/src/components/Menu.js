@@ -11,11 +11,11 @@ export default (props) => (
             </div>
             <ul class="menu_links">
                 <li><NavLink className="menu-nav-link" activeClassName="active-link" to="/">Profile</NavLink></li>
-                <li><NavLink className="menu-nav-link" activeClassName="active-link" to="/">Discovery</NavLink></li>
-                <li><NavLink className="menu-nav-link" activeClassName="active-link" to="/">Messages</NavLink></li>
+                <li><NavLink className="menu-nav-link" activeClassName="active-link" to="/discovery">Discovery</NavLink></li>
+                <li><NavLink className="menu-nav-link" activeClassName="active-link" to="/chat">Messages</NavLink></li>
                 <li><NavLink className="menu-nav-link" activeClassName="active-link" to="/faq">FAQ/Help</NavLink></li>
-                <li><NavLink className="menu-nav-link" activeClassName="active-link" to="/">Terms of Use</NavLink></li>
-                <li><NavLink className="menu-nav-link" activeClassName="active-link" to="/">Privacy Policy</NavLink></li>
+                <li><NavLink className="menu-nav-link" activeClassName="active-link" to="/termsofuse">Terms of Use</NavLink></li>
+                <li><NavLink className="menu-nav-link" activeClassName="active-link" to="/privacypolicy">Privacy Policy</NavLink></li>
                 <li><NavLink className="menu-nav-link" activeClassName="active-link" to="/contact">Contact Us</NavLink></li>
                 <li><NavLink className="menu-nav-link" activeClassName="active-link" to="/">Logout</NavLink></li>
             </ul>

@@ -7,6 +7,8 @@ import Contact from '../components/Contact'
 import Menu from '../components/Menu'
 import DiscoverProfile from '../components/DiscoverProfile'
 import Chat from '../components/Chats'
+import PrivacyPolicy from '../components/PrivacyPolicy'
+import TermsOfUse from '../components/TermsOfUse'
 const AppRouter = () => (
   <BrowserRouter>
     <div className="display-wrapper">
@@ -19,6 +21,9 @@ const AppRouter = () => (
           <Route path="/faq" component={Faq}/>
           <Route path="/discovery" component={DiscoverProfile}/>
           <Route path="/chat" component={Chat}/>
+          <Route path="/privacypolicy" component={PrivacyPolicy}/>
+          <Route path="/chat" component={Chat}/>
+          <Route path="/termsofuse" component={TermsOfUse}/>
           <Route component={Contact} />
         </Switch>
       </div>

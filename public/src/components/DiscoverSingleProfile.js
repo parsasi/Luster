@@ -33,14 +33,14 @@ export default (props) => (
             </div>
             </div>
             <div class="like-and-dislike-buttons-box">
-            <div class="like-dislike-button-outer">
-                <img src="./imgs/X.svg" />
-            </div>
-            <div class="like-dislike-button-outer">
-                <img src="./imgs/Heart.svg" />
-            </div>
-        </div>    
-    </div>
+                <button class="like-dislike-button-outer">
+                    <img src="./imgs/X.svg" />
+                </button>
+                <button class="like-dislike-button-outer">
+                    <img src="./imgs/Heart.svg" />
+                </button>
+            </div>    
+     </div>
 )
 
 
