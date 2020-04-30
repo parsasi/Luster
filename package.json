@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "start" : "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/parsasi/Lustr/issues"
+  },
+  "engines": {
+    "node": "10.x"
   },
   "homepage": "https://github.com/parsasi/Lustr#readme",
   "dependencies": {
