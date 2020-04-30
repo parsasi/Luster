@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/my-profile.css'
 
 export default (props) => (
     <div class="individual-image">                           

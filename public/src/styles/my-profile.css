@@ -7,7 +7,7 @@
 .edit-profile-page-box{
     font-family: "Raleway", sans-serif;
     font-size: 20pt;
-    width: 100%;
+    width: 70vw;
     padding: 25px;
     background-color: #B2DFDB;
     border-radius: 15px;
@@ -31,7 +31,7 @@
 .all-profile-images {
     display: flex;
     flex-wrap: wrap;
-    max-width: 100%;
+    /* max-width: 25%; */
     padding:20px;
 }
 
@@ -58,7 +58,7 @@
 .all-profile-images {
     display: flex;
     flex-grow: 1;
-    max-width: 30%;
+    max-width: 25%;
     flex-wrap: wrap;
     justify-content: center;
     align-self: center;

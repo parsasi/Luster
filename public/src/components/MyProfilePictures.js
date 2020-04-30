@@ -1,6 +1,5 @@
 import React from 'react';
 import MyProfilePicture from './MyProfilePicture'
-import '../styles/my-profile.css'
 
 export default () => (
     <div class="all-profile-images">

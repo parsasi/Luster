@@ -1,17 +1,17 @@
 
 import React from 'react';
-import '../styles/my-profile.css'
 import MyProfilePictures from './MyProfilePictures'
+import {connect} from 'react-redux'
 import {Link } from 'react-router-dom';
 
-export default (props) => (
+const MyProfile =  (props) => (
      <div class="edit-profile-page-box">
      <div class="edit-profile-top">
          <div class="profile-name">Alecia</div>
-         <button class="editProfile-button-outer">
+         <div class="editProfile-button-outer">
              <img src="./imgs/Edit.svg"/>
-             Edit Profile
-         </button>
+             <Link to="/edit">Edit Profile</Link>
+        </div>
 
      </div>
 
@@ -32,3 +32,12 @@ export default (props) => (
      </div>
  </div>
 )
+
+const mapStateToProps = (state) => {
+    return {
+      user: state.user
+    };
+  };
+  
+  export default connect(mapStateToProps)(MyProfile);
+  
