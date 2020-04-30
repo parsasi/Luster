@@ -10,20 +10,27 @@ class Database{
           credential: this.admin.credential.cert(serviceAccount),
         });
         this.db = this.admin.firestore()
-
     }
     getUsers(){
         return this.db.collection('users').get()
     }
     addUser(user){
-      this.db.collection("users").add({
+      return this.db.collection("users").add({
         ...user
       })
+    }
+    getUser({id , email}){
+      return id ? this.db.collection("users").doc(id).get() : this.db.collection("users").where('email', '==', email).limit(1).get();
     }
 }
 
 const db = new Database()
+module.exports = db
+
+// Adding a User to the Database
 // db.addUser({name : 'Parsa Safavi' , city : 'Vancouver' , dob : db.admin.firestore.Timestamp.fromDate(new Date("May 5, 2001")) , email : 'parsasi@rocketmail.com' , sexualPreference : 'Male' })
+
+// Getting all the users from the database
 // db.getUsers().then((snapshot) => {
 //     snapshot.forEach((doc) => {
 //       console.log(doc.id, '=>', doc.data());
@@ -32,3 +39,15 @@ const db = new Database()
 //   .catch((err) => {
 //     console.log('Error getting documents', err);
 //   });
+
+// Finding a user with an email address
+// db.getUser({email : 'parsasi@rocketmail.com'})
+// .then(data => {
+//   data.forEach(doc => console.log(doc.data().name))
+// })
+
+// // Finding a user with an the ID
+// db.getUser({id : 'WVStncliIe52oFekbHtv'})
+// .then(data => {
+//   console.log(data.data().name)
+// })

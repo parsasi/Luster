@@ -13,8 +13,10 @@ module.exports.hash = (password) => {
 module.exports.compare = (password , password_hash) => {
     return new Promise((resolve , reject) => {
         bcrypt.compare(password, password_hash, function(err, result) {
-           if(err || !result){
+           if(err){
                reject(err)
+            }else if(!result){
+                reject(new Error('Incorrect password'))
             }
             resolve(result)
         });
