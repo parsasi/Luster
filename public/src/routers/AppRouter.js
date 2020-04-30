@@ -11,6 +11,8 @@ import PrivacyPolicy from '../components/PrivacyPolicy'
 import TermsOfUse from '../components/TermsOfUse'
 import SignIn from '../components/Signin'
 import SignUp from '../components/SignUp';
+import Landing from '../components/Landing'
+console.log(Landing)
 const AppRouter = () => (
   <BrowserRouter>
     <div className="display-wrapper">
@@ -27,6 +29,7 @@ const AppRouter = () => (
           <Route path="/termsofuse" component={() => (<div className="main-page-wrapper"><Menu/><TermsOfUse /></div>)}/>
           <Route path="/signin" component={SignIn}/>
           <Route path="/signup" component={SignUp}/>
+          <Route path="/landing" component={Landing}/>
           <Route component={Contact} />
         </Switch>
       </div>
