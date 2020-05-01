@@ -23,7 +23,18 @@ class SignIn extends React.Component{
         }
         if(signinValidator(user)){
             signin(user)
-            .then(data => console.log(data))
+            .then(data => {
+                if(!data.token){
+                    this.setState(() => ({error : 'Error occured, singing in.'}))
+                    return
+                }
+                this.props.dispatch({
+                    type : 'USER_SIGNED_IN',
+                    data : data
+                })
+                localStorage.setItem('token', data.token);
+                this.props.history.push("/");
+            })
             .catch(e => {
                 console.log(e)
                 this.setState(() => ({error : e}))
