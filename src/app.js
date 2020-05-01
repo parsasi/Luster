@@ -1,7 +1,7 @@
 module.exports = (database , authentication) => {
     const express = require('express')
     const app = express()
-    const indexRoute = require('./routes/index')(database , authentication )
+    const apiRoute = require('./routes/api')(database , authentication)
     const bodyParser = require('body-parser')
     
     app.use(express.json());
@@ -9,7 +9,7 @@ module.exports = (database , authentication) => {
     app.use(express.static('public/build'))
     app.use(bodyParser())
 
-    app.use('/api' , indexRoute)
+    app.use('/api' , apiRoute)
 
     return app
 } 
