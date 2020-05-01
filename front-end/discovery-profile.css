@@ -1,0 +1,27 @@
+.discovery-page {
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+}
+
+.discovery-profile-box{
+    font-family: "Raleway", sans-serif;
+    display: inline-flex;
+    flex-direction: column;
+    width: 60vw;
+    height: auto;
+    padding: 25px;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #B2DFDB;
+    border-radius: 15px;
+    position: relative;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.like-and-dislike-buttons-box {
+    display: flex;
+    justify-content: space-around;
+}

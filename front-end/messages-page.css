@@ -1,0 +1,80 @@
+.messages-page {
+    display: flex;
+    flex-direction: row;
+    padding: 3% 3%;
+}
+
+.messages-page-box{
+    font-family: "Raleway", sans-serif;
+    font-size: 20pt;
+    width: 100%;
+    height: auto;
+    padding: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #B2DFDB;
+    border-radius: 15px;
+    margin-left: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.messages-pic img {
+    border-radius: 10px;
+    width: 15vw;
+    width: 15vh;
+    object-fit: contain;
+}
+
+.messages-profile {
+    display: inline-flex;
+}
+
+.message-info {
+    padding: 10px;
+    vertical-align: 20px;
+}
+
+.last-message-box {
+    background-color: white;
+    border-radius: 10px;
+    width: 250px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #979CB3;
+    font-family: "Raleway", sans-serif;
+    font-size: 20pt;
+    padding: 0 5px;
+}
+
+.last-message {
+    font-family: "Raleway", sans-serif;
+    font-size: 20pt;
+    color: #979CB3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.message-profile-box {
+    background-color:  #E7FFF8;
+    border-radius: 10px;
+    padding: 15px;
+    max-width: 280px;
+    height: 250px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 2;
+    margin: 10px 35px;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }

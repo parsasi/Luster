@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link href="menu.css" rel="stylesheet" type="text/css">
+    <link href="landingpage.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="chat-page.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="./buttons/other-buttons.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="chat-page">
+
+        <!-- START MENU COMPONENT -->
+        <div class="menu">
+            <div class="menu_logo">
+                <img src="imgs/Logo.svg" />
+            </div>
+            <ul class="menu_links">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Discovery</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">FAQ/Help</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+        <!-- END MENU COMPONENT -->
+
+        <!-- START CHAT COMPONENT-->
+        <div class="chat-page-box">
+            <div class="all-chats">
+                <div class="individual-chat">
+                    <img src="https://img.icons8.com/material-rounded/48/000000/user-male-circle.png"/>
+                    <span class="chat-name">Kevin</span>
+                </div>
+                <div class="individual-chat">
+                    <img src="https://img.icons8.com/material-rounded/48/000000/user-male-circle.png"/>
+                    <span class="chat-name">Lucas</span>
+                </div>
+                <div class="individual-chat">
+                    <img src="https://img.icons8.com/material-rounded/48/000000/user-male-circle.png"/>
+                    <span class="chat-name">James</span>
+                </div>
+                <div class="individual-chat">
+                    <img src="https://img.icons8.com/material-rounded/48/000000/user-male-circle.png"/>
+                    <span class="chat-name">Jason</span>
+                </div>
+            </div>
+            <div class="current-chat">
+                <!-- START PROFILE COMPONENT -->
+                <div class="in-chat-profile">
+                    <div>
+                        <div class="profile_info_name">Kevin</div>
+                        <div class="chat-profile-picture">
+                            <img src="imgs/testimgs/kevinprof.png" />
+                        </div>
+                    </div>
+                    <div class="profile_info">
+                        <div class="profile_info_desc">
+                            <span class="profile_info_desc_location">Vancouver</span> <br>
+                            <span class="profile_info_desc_gender">Male</span> <br>
+                            <span class="profile_info_desc_age"></span>25</span> <br>
+                        </div>
+                        <div class="profile_info_blur">
+                            Looking for: Relationship <br>
+                            Exercise Level: Active <br>
+                            Alcohol: Socially <br>
+                            Sign: Pisces
+                        </div>
+                    </div>
+                </div>
+                <!-- END PROFILE COMPONENT -->
+
+                <!-- START MESSAGING COMPONENT-->
+                <div class="message-boxes">
+                    <div class="individual-message bubbleWrapper">
+                        <div class="inlineContainer">
+                            <div class="otherBubble other">
+                                Hey! How are you?
+                            </div>
+                        </div><span class="other">08:54</span>
+                    </div>
+
+                    <div class="bubbleWrapper">
+                        <div class="inlineContainer own">
+                            <div class="ownBubble own">
+                                I'm doing good, how are you?
+                            </div>
+                        </div><span class="own">08:55</span>
+                    </div>
+                </div>
+                
+                <div class="type-and-send-box">
+                        <input class="message-input" type="text">
+                        <div class="sendMessage-button-outer">
+                            Send
+                        </div>
+                </div>
+                <!-- END MESSAGING COMPONENT-->
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

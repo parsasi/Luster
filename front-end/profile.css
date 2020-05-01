@@ -1,0 +1,68 @@
+.profile {
+    font-family: 'Raleway', sans-serif;
+    display: inline-flex;
+    width: 50vw;
+    height: auto;
+    padding: 25px;
+    background-color: #E7FFF8;
+    border-radius: 15px;
+    position: relative;
+}
+
+.profile_report img {
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    right: 25px;
+}
+
+
+/* IMAGES START */
+
+.profile_pictures {
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_pictures_main img {
+    width: 200px;
+    border-radius: 30px;
+    padding-bottom: 5px;
+}
+
+.profile_pictures_other img {
+    width: 100px;
+    height: 100px;
+    border-radius: 30px;
+}
+
+/* IMAGES END */
+
+
+
+/* INFO START */
+
+.profile_info {
+    margin-left: 10%;
+}
+
+.profile_info_name {
+    font-size: 40pt;
+    padding-bottom: 20px;
+}
+
+.profile_info_desc span {
+    display: flex;
+    flex-direction: column;
+    font-size: 20pt;
+    padding-bottom: 20px;
+}
+
+.profile_info_blur {
+    color: transparent;
+    text-shadow: 0 0 10px rgba(0,0,0,1);
+    line-height: 30px;
+}
+
+/* INFO END */

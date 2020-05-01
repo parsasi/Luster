@@ -1,0 +1,174 @@
+.switch-wrapper{
+    width:70%
+}
+.chat-page {
+    display: flex;
+    flex-direction: row;
+    padding: 3% 3%;
+}
+
+.chat-page-box{
+    font-family: "Raleway", sans-serif;
+    font-size: 20pt;
+    width: 70vw;
+    padding: 25px;
+    background-color: #B2DFDB;
+    border-radius: 15px;
+    margin-left: 5%;
+    display: flex;
+    height: 79vh;
+}
+
+.all-chats {
+    flex-grow: 1;
+    background-color:  #E7FFF8;
+    max-height: 100%;
+    margin:10px;
+    max-width: 30%;
+    padding-top: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.current-chat {
+    flex-grow: 2.5;
+    background-color:  #E7FFF8;
+    margin:10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.individual-chat {
+    width: 80%;
+    background-color: white;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px grey;
+}
+
+.individual-chat:hover {
+    background-color: #B2DFDB;
+}
+
+.chat-name {
+    padding-left: 10px;
+}
+
+.in-chat-profile {
+    flex-grow: 1;
+    margin: 10px;
+    padding: 15px;
+    max-width: 100%;
+    overflow: auto;
+    background-color: #B2DFDB;
+    display: flex;
+    font-size: 13pt;
+    border-radius: 15px;
+}
+
+.profile_info_name {
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.chat-profile-picture img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 5px solid #E7FFF8;
+}
+
+.profile_info_blur {
+    color: transparent;
+    text-shadow: 0 0 10px rgba(0,0,0,1);
+    line-height: 30px;
+}
+
+.profile_info {
+    padding-left: 5%;
+}
+
+.message-boxes {
+    margin: 10px;
+    padding: 15px;
+    max-width: 100%;
+    overflow: auto;
+    background-color: white;
+    font-size: 13pt;
+    border-radius: 15px;
+    flex-grow: 2;
+    overflow: auto;
+}
+
+.bubbleWrapper {
+	padding: 10px 10px;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+	align-self: flex-end;
+    color: black;
+}
+.inlineContainer {
+    display: inline-flex;
+}
+.inlineContainer.own {
+    flex-direction: row-reverse;
+}
+.inlineIcon {
+    width:20px;
+    object-fit: contain;
+}
+.ownBubble {
+	min-width: 60px;
+	max-width: 700px;
+	padding: 14px 18px;
+    margin: 6px 8px;
+	background-color: #B2DFDB;
+	border-radius: 16px 16px 0 16px;
+	border: 1px solid #443f56;
+ 
+}
+.otherBubble {
+	min-width: 60px;
+	max-width: 700px;
+	padding: 14px 18px;
+    margin: 6px 8px;
+	background-color: #E7FFF8;
+	border-radius: 16px 16px 16px 0;
+	border: 1px solid #54788e;
+  
+}
+.own {
+	align-self: flex-end;
+}
+.other {
+	align-self: flex-start;
+}
+span.own,
+span.other{
+    font-size: 14px;
+    color: grey;
+}
+
+.type-and-send-box {
+    display: flex;
+    margin: 10px;
+}
+
+.message-input {
+    flex-grow: 10;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: 1px solid #979CB3;
+    padding: 10px;
+    font-size: 16pt;
+}
