@@ -1,4 +1,4 @@
-const database = 'database'//require('./database/')
+const database = require('./database/firebase')
 const authentication = require('./src/middlewares/authentication')
 require('dotenv').config()
 
