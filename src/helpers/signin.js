@@ -1,22 +1,29 @@
-module.exports = (database , email , password) => {
+module.exports = (database ,{ email , password}) => {
     const bcrypt = require('./bcrypt')
+    const jwt = require('./jwt')
     return new Promise((resolve,reject) => {
         database.getUser({email})
         .then(snapshot => {
-            // console.log(snapshot.data())
-            // console.log(snapshot.docs[0].data())
-            let user = snapshot.docs[0].data()
-            // resolve(user)
-            bcrypt.compare(password , user.password)
-            .then(user => {
-                console.log('here')
-                delete user.password 
-                resolve(user)
-            })
-            .catch(err =>{
-                console.log('here')
-                reject(err)
-            })
+            if(snapshot.docs[0]){
+                let user = snapshot.docs[0].data()
+                bcrypt.compare(password , user.password)
+                .then(data => {
+                    delete user.password
+                    console.log(user)
+                    jwt.sign(user)
+                    .then(token => {
+                        user.token = token
+                        resolve(user)
+                    }) 
+                    .catch(e => reject(e))
+                })
+                .catch(err =>{
+                    reject(err)
+                })
+            }
+            else{
+                reject(new Error('User not found'))
+            }
         })
         .catch(err => reject(err))
     })
