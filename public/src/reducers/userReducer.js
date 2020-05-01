@@ -28,7 +28,7 @@ export default (state = userReducerDefaultState, action) => {
             name : undefined,
             token : ''
         };
-      case 'USER_AUTH_SIGNEDUP':
+      case 'USER_SIGNED_UP':
         return {
           ...state,
           signedUp: true

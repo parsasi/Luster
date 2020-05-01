@@ -4,14 +4,16 @@ import {Link, NavLink } from 'react-router-dom';
 import '../styles/signup.css'
 import '../styles/teal-buttons.css'
 import signup from '../api/signup';
-import singupValidator from '../helpers/signupValidator'
+import {connect} from 'react-redux'
 import signupValidator from '../helpers/signupValidator';
 
-export default class SignUp extends React.Component{
+class SignUp extends React.Component{
     constructor(props){
         super(props)
         this.submitEventHandler = this.submitEventHandler.bind(this)
-        this.state = {}
+        this.state = {
+            error : ''
+        }
     }
     submitEventHandler(e){
         e.preventDefault()
@@ -26,41 +28,48 @@ export default class SignUp extends React.Component{
         }
         if(signupValidator(user)){
             signup(user)
-            .then(data => console.log('successfully signed up'))
-            .catch(e => console.log(e))  
+            .then(data => {
+                this.props.dispatch({
+                    type : 'USER_SIGNED_UP',
+                })
+                this.props.history.push("/signin");
+            })
+            .catch(e => {
+                this.setState(() => ({error : e}))
+            })  
         }else{
             console.log('Invalid input')
         }
     } 
     render(){
         return (
-        <div class="signup-box">
-                <h1 class="signup-title">Sign Up</h1>
-                <div class="signup-form">
+        <div className="signup-box">
+                <h1 className="signup-title">Sign Up</h1>
+                <div className="signup-form">
                     <div>
-                        <label class="signup-label" for="fname">First Name <span class="required">*</span></label> <br/>
-                        <input type="text" class="signup-input" name="fname" required placeholder="First Name"/><br/>
+                        <label className="signup-label" htmlFor="fname">First Name <span className="required">*</span></label> <br/>
+                        <input type="text" className="signup-input" name="fname" required placeholder="First Name"/><br/>
                     </div>
 
                     <div>
-                        <label class="signup-label" for="email">Email Address <span class="required">*</span></label> <br/>
-                        <input type="email" class="signup-input" name="email" required placeholder="Email Address"/> <br/>
+                        <label className="signup-label" htmlFor="email">Email Address <span className="required">*</span></label> <br/>
+                        <input type="email" className="signup-input" name="email" required placeholder="Email Address"/> <br/>
                     </div>
 
                     <div>
-                        <label class="signup-label" for="password">Password <span class="required">*</span></label> <br/>
-                        <input type="password" class="signup-input" name="password" required placeholder="Password"/> <br/>
+                        <label className="signup-label" htmlFor="password">Password <span className="required">*</span></label> <br/>
+                        <input type="password" className="signup-input" name="password" required placeholder="Password"/> <br/>
                     </div>
 
                     <div>
-                        <label class="signup-label" for="city">City <span class="required">*</span></label> <br/>
-                        <input type="text" class="signup-input" name="city" required placeholder="City"/> <br/>
+                        <label className="signup-label" htmlFor="city">City <span className="required">*</span></label> <br/>
+                        <input type="text" className="signup-input" name="city" required placeholder="City"/> <br/>
                     </div>
 
-                    <div class="gender-preference">
-                        <div class="gender-box">
-                            <label class="signup-label" for="gender">Gender <span class="required">*</span></label> <br/>
-                            <select class="signup-input" required name="gender">
+                    <div className="gender-preference">
+                        <div className="gender-box">
+                            <label className="signup-label" htmlFor="gender">Gender <span className="required">*</span></label> <br/>
+                            <select className="signup-input" required name="gender">
                                 <option value="gender" disabled defaultValue hidden>Gender</option>
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
@@ -69,8 +78,8 @@ export default class SignUp extends React.Component{
                         </div>
 
                         <div>
-                            <label class="signup-label" for="preference">Sexual Preference <span class="required">*</span></label> <br/>
-                            <select class="signup-input" required name="preference">
+                            <label className="signup-label" htmlFor="preference">Sexual Preference <span className="required">*</span></label> <br/>
+                            <select className="signup-input" required name="preference">
                                 <option value="preference" disabled defaultValue hidden>Preference</option>
                                 <option value="women">Women</option>
                                 <option value="men">Men</option>
@@ -79,11 +88,20 @@ export default class SignUp extends React.Component{
                         </div>
                     </div>
                     <br/>
-                    <label class="signup-label"  for="birthday">Birthday <span class="required">*</span></label> <br/>
-                    <input type="date" id="birthday" required name="birthday" class="signup-input"/>
-                    <input id="signup-submit" type="submit" onClick={this.submitEventHandler} class="teal-button-box"/>
+                    <label className="signup-label"  htmlFor="birthday">Birthday <span className="required">*</span></label> <br/>
+                    <input type="date" id="birthday" required name="birthday" className="signup-input"/>
+                    <input id="signup-submit" type="submit" onClick={this.submitEventHandler} className="teal-button-box"/>
                 </div>
         </div>
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+      user: state.user
+    };
+  };
+
+export default connect(mapStateToProps)(SignUp);
+  

@@ -16,10 +16,11 @@ module.exports = (database , authentication) => {
         let user = req.body.user
         signup(database , user)
         .then(data => {
-            res.statusCode(200)
+            res.statusCode = 200
             res.json()
         })
         .catch(e => {
+            console.log(e)
             res.statusCode = 500
             res.json(e)
         })
