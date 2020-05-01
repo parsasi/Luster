@@ -24,7 +24,7 @@ const MyProfile =  (props) => (
              <div class="profile-info"><b>Location:</b> Burnaby</div>
              <div class="profile-info"><b>Looking For:</b> Relationship</div>
              <div class="profile-info"><b>Exercise Level:</b> Active</div>
-             <div class="profile-info"><b>Alcohol:</b> Socially</div>
+             <div class="profile-inf    o"><b>Alcohol:</b> Socially</div>
              <div class="profile-info"><b>Sign:</b> Taurus</div>
              <div class="profile-info"><b>Pets:</b> Lots</div>
              <div class="profile-info"><b>Cannabis:</b> Socially</div>
