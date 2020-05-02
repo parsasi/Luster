@@ -11,7 +11,7 @@ const userReducerDefaultState = {
   
 export default (state = userReducerDefaultState, action) => {
     switch (action.type) {
-      case 'USER_AUTH_SIGNEDIN':
+      case 'USER_SIGNED_IN':
         return {
           ...state,
           isAuthenticated: true,
