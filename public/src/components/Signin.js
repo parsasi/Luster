@@ -43,6 +43,11 @@ class SignIn extends React.Component{
             this.setState(() => ({error : 'Please complete the form'}))
         }
     }
+    componentWillMount(){
+        if(this.props.user.token){
+            this.props.history.push("/");
+        }
+    }
     render(){
         return (
             <div class="signin">

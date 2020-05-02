@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const detokenize = require('../helpers/detokenize')
 const signup = require('../helpers/signup')
 const singin = require('../helpers/signin')
 
@@ -36,6 +37,20 @@ module.exports = (database , authentication) => {
         singin(database , user)
         .then(user => res.json(user))
         .catch(e => {
+            res.json(e)
+        })
+    })
+
+    router.get('/detokenize',(req,res) => {
+        if(!req.query.token){
+            req.statusCode = 500
+            res.json({error : true , message : 'Invalid input'})
+            return 
+        }
+        detokenize(req.query.token)
+        .then(data => res.json(data))
+        .catch(e => {
+            res.statusCode = 500
             res.json(e)
         })
     })
