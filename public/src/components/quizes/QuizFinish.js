@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Finish</title>
-    <link href="quiz.css" rel="stylesheet" type="text/css">
-    <link href="../buttons/teal-buttons.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="quizmainpage">
+import React from 'react';
+import '../../styles/quiz-buttons.css'
+import '../../styles/quiz.css'
 
-        <!-- START QUIZ COMPONENT -->
+export default (props) => {
+    return (
         <div class="quizmain">
             <img class="quizmain_title" src="../imgs/finished.svg" />
             <div class="quizmain_text">
@@ -27,8 +19,5 @@
                 <div class="progressbarfin">Start ●●●●●●●●●● End</div>
             </div>
         </div>
-        <!-- END QUIZ COMPONENT -->
-        
-    </div>
-</body>
-</html>
+    );
+}
