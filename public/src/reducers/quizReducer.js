@@ -17,7 +17,6 @@ export default (state = quizReducerDefaultState, action) => {
           item.selected = false
           return item
         })
-        console.log(newState)
         newState = newState.map(item =>{
           item.selected = item.component == action.data
           return item
@@ -25,9 +24,32 @@ export default (state = quizReducerDefaultState, action) => {
         return newState
       case 'QUIZ_NEXT_QUESTION':
         const currentQuestion = state.filter(item => item.selected === true)[0]
-        let currentIndex = state.indexOf(currentQuestion)
-        // if() 
-        return newState
+        if(currentQuestion){
+          let component = currentQuestion.component + 1
+          let nextQuestionNewState = state.map(item => {
+            item.selected = false
+            return item
+          })
+          nextQuestionNewState = nextQuestionNewState.map(item =>{
+            item.selected = item.component == component
+            return item
+          })
+          return nextQuestionNewState 
+        }
+        case 'QUIZ_PREV_QUESTION':
+          const prevCurrentQuestion = state.filter(item => item.selected === true)[0]
+          if(prevCurrentQuestion){
+            let prevComponent = prevCurrentQuestion.component - 1
+            let prevQuestionNewState = state.map(item => {
+              item.selected = false
+              return item
+            })
+            prevQuestionNewState = prevQuestionNewState.map(item =>{
+              item.selected = item.component == prevComponent
+              return item
+            })
+            return prevQuestionNewState 
+          }
       default:
         return state;
     }

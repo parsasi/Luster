@@ -1,8 +1,10 @@
 import React from 'react';
 import '../../styles/quiz-buttons.css'
 import '../../styles/quiz.css'
+import QuizBackward from './QuizBakward'
+import {connect} from 'react-redux'
 
-export default (props) => {
+const QuizFinish =  (props) => {
     return (
         <div class="quizmain">
             <img class="quizmain_title" src="../imgs/finished.svg" />
@@ -12,12 +14,19 @@ export default (props) => {
             <div class="big-teal-button-box">
                 Start Matching!
             </div>
-            <div class="teal-button-box backbutton">
-                Back
-            </div>
+            <QuizBackward />
             <div class="middlesection">
                 <div class="progressbarfin">Start ●●●●●●●●●● End</div>
             </div>
         </div>
     );
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+      quiz: state.quiz
+    };
+  };
+
+export default connect(mapStateToProps)(QuizFinish);

@@ -1,8 +1,11 @@
 import React from 'react';
 import '../../styles/quiz-buttons.css'
 import '../../styles/quiz.css'
+import QuizBackward from './QuizBakward'
+import QuizForward from './QuizForward';
+import {connect} from 'react-redux'
 
-export default (props) => {
+const Quiz5 =  (props) => {
     return (
         <div class="quizmain">
             <img src="../imgs/zodiac.svg" class="zodiac_img"/>
@@ -27,16 +30,22 @@ export default (props) => {
             </select>
 
 
-            <div class="teal-button-box backbutton">
-                Back
-            </div>
-            <div class="teal-button-box nextbutton">
-                Next
-            </div>
+            <QuizBackward />
+            <QuizForward />
             <div class="middlesection">
-                <div class="skipbutton">Skip</div>
+                <div class="skipbutton" onClick={() => {props.dispatch({type : 'QUIZ_NEXT_QUESTION'})}}>Skip</div>
                 <div class="progressbar">Start ●●●●○○○○○○ End</div>
             </div>
         </div>
     );
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+      quiz: state.quiz
+    };
+  };
+
+export default connect(mapStateToProps)(Quiz5);
+  

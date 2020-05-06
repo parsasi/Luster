@@ -2,7 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux'
 import '../../styles/quiz-buttons.css'
 import '../../styles/quiz.css'
-
+import QuizBackward from './QuizBakward'
+import QuizForward from './QuizForward';
 const Quiz1 =  (props) => {
     return (
         <div class="quizmain">
@@ -21,17 +22,12 @@ const Quiz1 =  (props) => {
             <div class="mid-quiz-button-box">
                 Never
             </div>
-
-            <div class="teal-button-box backbutton">
-                Back
-            </div>
-            <div class="teal-button-box nextbutton">
-                Next
-            </div>
+            <QuizBackward />
+            <QuizForward />
             <div class="middlesection">
-                <div class="skipbutton" onClick={props.dispatch({type : 'QUIZ_NEXT_QUESTION'})}>Skip</div>
+                <div class="skipbutton" onClick={() => {props.dispatch({type : 'QUIZ_NEXT_QUESTION'})}}>Skip</div>
                 <div class="progressbar">Start ○○○○○○○○○○ End</div>
-            </div>
+             </div>
         </div>
     );
 }
