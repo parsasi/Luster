@@ -13,7 +13,7 @@ import SignIn from '../components/Signin'
 import SignUp from '../components/SignUp';
 import Landing from '../components/Landing'
 import PrivateRoute from '../components/privateRoute' 
-
+import Quizes from '../components/Quizes'
 
 
 const AppRouter = () => (
@@ -30,6 +30,7 @@ const AppRouter = () => (
           <PrivateRoute path="/privacypolicy" component={() => (<div className="main-page-wrapper"><Menu/><PrivacyPolicy /></div>)}/>
           <PrivateRoute path="/chat" component={() => (<div className="main-page-wrapper"><Menu/><Chat /></div>)}/>
           <PrivateRoute path="/termsofuse" component={() => (<div className="main-page-wrapper"><Menu/><TermsOfUse /></div>)}/>
+          <PrivateRoute path="/quiz" component={() => (<div className="main-page-wrapper"><Menu/><Quizes /></div>)}/>
           <Route path="/signin" component={SignIn}/>
           <Route path="/signup" component={SignUp}/>
           <PrivateRoute path="/landing" component={Landing}/>

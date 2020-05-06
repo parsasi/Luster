@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Question 5</title>
-    <link href="quiz.css" rel="stylesheet" type="text/css">
-    <link href="../buttons/teal-buttons.css" rel="stylesheet" />
-    <link href="../buttons/quiz-buttons.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="quizmainpage">
+import React from 'react';
+import '../../styles/quiz-buttons.css'
+import '../../styles/quiz.css'
+import QuizBackward from './QuizBakward'
+import QuizForward from './QuizForward';
+import {connect} from 'react-redux'
 
-        <!-- START QUIZ COMPONENT -->
+const Quiz5 =  (props) => {
+    return (
         <div class="quizmain">
             <img src="../imgs/zodiac.svg" class="zodiac_img"/>
 
@@ -36,19 +30,22 @@
             </select>
 
 
-            <div class="teal-button-box backbutton">
-                Back
-            </div>
-            <div class="teal-button-box nextbutton">
-                Next
-            </div>
+            <QuizBackward />
+            <QuizForward />
             <div class="middlesection">
-                <div class="skipbutton">Skip</div>
+                <div class="skipbutton" onClick={() => {props.dispatch({type : 'QUIZ_NEXT_QUESTION'})}}>Skip</div>
                 <div class="progressbar">Start ●●●●○○○○○○ End</div>
             </div>
         </div>
-        <!-- END QUIZ COMPONENT -->
-        
-    </div>
-</body>
-</html>
+    );
+}
+
+
+const mapStateToProps = (state) => {
+    return {
+      quiz: state.quiz
+    };
+  };
+
+export default connect(mapStateToProps)(Quiz5);
+  
