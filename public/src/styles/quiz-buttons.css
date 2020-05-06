@@ -12,7 +12,7 @@
     font-weight: normal;
 }
 
-.mid-quiz-button-box::selection{
+.mid-quiz-button-box::selection,.mid-quiz-button-box.selected {
     background: none;
     color: none;
 }
@@ -30,7 +30,7 @@
     font-family: 'Raleway', sans-serif;
 }
 
-.narrow-quiz-button-box::selection{
+.narrow-quiz-button-box::selection , .narrow-quiz-button-box.selected {
     background: none;
     color: none;
 }
@@ -48,7 +48,7 @@
     font-family: 'Raleway', sans-serif;
 }
 
-.wide-quiz-button-box::selection{
+.wide-quiz-button-box::selection , .wide-quiz-button-box.selected {
     background: none;
     color: none;
 }
