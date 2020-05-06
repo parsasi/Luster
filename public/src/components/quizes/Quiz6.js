@@ -4,34 +4,36 @@ import '../../styles/quiz.css'
 import QuizBackward from './QuizBakward'
 import QuizForward from './QuizForward';
 import {connect} from 'react-redux'
+import QuizParent from './QuizParentClass'
+class Quiz6 extends QuizParent{
+    render(){
+        return (
+            <div class="quizmain">
+                <img src="../imgs/pray.svg" class="pray_img"/>
 
-const Quiz6 =  (props) => {
-    return (
-        <div class="quizmain">
-            <img src="../imgs/pray.svg" class="pray_img"/>
+                <div class="quizquestion">
+                    Are you religious?
+                </div>     
 
-            <div class="quizquestion">
-                Are you religious?
-            </div>     
+                <div class="mid-quiz-button-box" onClick={this.choiceHandle} val="yes">
+                    Yes
+                </div>   
+                <div class="mid-quiz-button-box" onClick={this.choiceHandle} val="no">
+                    No
+                </div>    
+                <div class="mid-quiz-button-box" onClick={this.choiceHandle} val="spiritual">
+                    Spiritual
+                </div>
 
-            <div class="mid-quiz-button-box">
-                Yes
-            </div>   
-            <div class="mid-quiz-button-box">
-                No
-            </div>    
-            <div class="mid-quiz-button-box">
-                Spiritual
+                <QuizBackward />
+                <QuizForward />
+                <div class="middlesection">
+                    <div class="skipbutton" onClick={() => {this.props.dispatch({type : 'QUIZ_NEXT_QUESTION'})}}>Skip</div>
+                    <div class="progressbar">Start ●●●●●○○○○○ End</div>
+                </div>
             </div>
-
-            <QuizBackward />
-            <QuizForward />
-            <div class="middlesection">
-                <div class="skipbutton" onClick={() => {props.dispatch({type : 'QUIZ_NEXT_QUESTION'})}}>Skip</div>
-                <div class="progressbar">Start ●●●●●○○○○○ End</div>
-            </div>
-        </div>
-    );
+        );
+    }
 }
 
 

@@ -19,18 +19,17 @@ class Quizes extends React.Component{
     componentWillMount(){
         allQuizes.forEach((item , counter) => {
             const selected = counter === 0
-            this.props.dispatch({type : 'QUIZ_ADD_QUESTION' , data : {component : counter , selected  , answere : '' }})
+            this.props.dispatch({type : 'QUIZ_ADD_QUESTION' , data : {component : counter , selected  , answer : '' }})
         })
     }
     render(){
         if(this.props.quiz.filter(item => item.selected == true)[0]){
-            const ComponentIndex = this.props.quiz.filter(item => item.selected == true)[0].component
-            console.log(ComponentIndex)
-            this.Component = allQuizes[ComponentIndex]
+            this.ComponentIndex = this.props.quiz.filter(item => item.selected == true)[0].component
+            this.Component = allQuizes[this.ComponentIndex]
         }
         return (
             <div>
-                {this.Component && <this.Component />}
+                {this.Component && <this.Component index={this.ComponentIndex} />}
             </div>
         )
     }

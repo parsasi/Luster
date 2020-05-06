@@ -50,6 +50,16 @@ export default (state = quizReducerDefaultState, action) => {
             })
             return prevQuestionNewState 
           }
+        case 'QUIZ_QUESTION_ANSWERED':
+          const answer = action.data.answer
+          const question = action.data.question
+          console.log(answer , question)
+          return state.map(item => {
+            if(item.component === question){
+              item.answer = answer
+            }
+            return item
+          })
       default:
         return state;
     }

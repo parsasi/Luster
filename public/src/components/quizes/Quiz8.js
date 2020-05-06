@@ -4,39 +4,41 @@ import '../../styles/quiz.css'
 import QuizBackward from './QuizBakward'
 import QuizForward from './QuizForward';
 import {connect} from 'react-redux'
+import QuizParent from './QuizParentClass'
+class Quiz8 extends QuizParent{
+    render(){
+        return (
+            <div class="quizmain">
+                <img src="../imgs/paws.svg" class="paws_img"/>
 
-const Quiz8 =  (props) => {
-    return (
-        <div class="quizmain">
-            <img src="../imgs/paws.svg" class="paws_img"/>
+                <div class="quizquestion">
+                    Do you have pets?
+                </div>     
 
-            <div class="quizquestion">
-                Do you have pets?
-            </div>     
-
-            <div class="narrow-quiz-button-box">
-                Cat(s)
-            </div>   
-            <div class="narrow-quiz-button-box">
-                Dog(s)
-            </div>      
-            <div class="narrow-quiz-button-box">
-                Lots
-            </div>  
-            <div class="narrow-quiz-button-box">
-                None
-            </div>     
-            <div class="mid-quiz-button-box">
-                Don't Want
-            </div>    
-            <QuizBackward />
-            <QuizForward />
-            <div class="middlesection">
-                <div class="skipbutton" onClick={() => {props.dispatch({type : 'QUIZ_NEXT_QUESTION'})}}>Skip</div>
-                <div class="progressbar">Start ●●●●●●●○○○ End</div>
+                <div class="narrow-quiz-button-box" onClick={this.choiceHandle} val="cat">
+                    Cat(s)
+                </div>   
+                <div class="narrow-quiz-button-box" onClick={this.choiceHandle} val="dog ">
+                    Dog(s)
+                </div>      
+                <div class="narrow-quiz-button-box" onClick={this.choiceHandle} val="other">
+                    other
+                </div>  
+                <div class="narrow-quiz-button-box" onClick={this.choiceHandle} val="none">
+                    None
+                </div>     
+                <div class="mid-quiz-button-box" onClick={this.choiceHandle} val="dontwant">
+                    Don't Want
+                </div>    
+                <QuizBackward />
+                <QuizForward />
+                <div class="middlesection">
+                    <div class="skipbutton" onClick={() => {this.props.dispatch({type : 'QUIZ_NEXT_QUESTION'})}}>Skip</div>
+                    <div class="progressbar">Start ●●●●●●●○○○ End</div>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 
