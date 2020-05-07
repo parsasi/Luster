@@ -1,13 +1,25 @@
 const jwt = require('../helpers/jwt')
+const detokenize = require('../helpers/detokenize')
 //For pages that require login
 module.exports.protected = (req,res,next) => {
-    req.user = {
-        email : 'user@gmail.com',
-        name : 'Aime',
-        city : 'Vancouver'
+    if(req.headers.user){
+        detokenize(req.headers.user)
+        .then(data => {
+            req.user = data
+            // console.log('req.user inside the middleware :' , req.user)
+            next()
+            return
+        })
+        .catch(e => {
+            console.log('here')
+            res.statusCode = 500
+            res.json(e)
+            return
+        })
+    }else{
+        res.json({error : true , message : 'Not Authenticated'})
+        return
     }
-    next()
-    //TODO: Integrate with JWT and React Authentication
 }
 
 // For pages where only non-logged in users are allowed (i.e. login)

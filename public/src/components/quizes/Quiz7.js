@@ -11,7 +11,7 @@ class Quiz7 extends QuizParent{
             <div class="quizmain">
                 <img src="../imgs/placard.svg" class="placard_img"/>
 
-                <div class="quizquestion">
+                <div class="quizquestion" question="politics">
                     What are your political leanings?
                 </div>     
 

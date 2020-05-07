@@ -12,7 +12,7 @@ class Quiz2 extends QuizParent{
             <div class="quizmain">
                 <img src="../imgs/drink.svg" class="drink_img"/>
 
-                <div class="quizquestion">
+                <div class="quizquestion" question="alcohol">
                     Do you drink alcohol?
                 </div>     
 

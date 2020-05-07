@@ -11,7 +11,7 @@ class Quiz8 extends QuizParent{
             <div class="quizmain">
                 <img src="../imgs/paws.svg" class="paws_img"/>
 
-                <div class="quizquestion">
+                <div class="quizquestion" question="pets">
                     Do you have pets?
                 </div>     
 

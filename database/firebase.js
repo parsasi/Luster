@@ -22,6 +22,10 @@ class Database{
     getUser({id , email}){
       return id ? this.db.collection("users").doc(id).get() : this.db.collection("users").where('email', '==', email).limit(1).get();
     }
+    updateQuiz(id , user){
+      this.db.collection('users').doc(id).set(user , {merge : true})
+      .catch(e => console.log(e))
+    }
 }
 
 const db = new Database()

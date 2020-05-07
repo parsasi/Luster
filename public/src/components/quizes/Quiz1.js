@@ -11,7 +11,7 @@ class Quiz1 extends QuizParent{
             <div class="quizmain">
             <img src="../imgs/weight.svg" class="exercise_img"/>
 
-            <div class="quizquestion">
+            <div class="quizquestion" question="exercise">
                 What is your exercise level?
             </div>     
 

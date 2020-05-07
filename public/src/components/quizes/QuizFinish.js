@@ -3,7 +3,8 @@ import '../../styles/quiz-buttons.css'
 import '../../styles/quiz.css'
 import QuizBackward from './QuizBakward'
 import {connect} from 'react-redux'
-
+import quizTransformer from '../../helpers/quizTransformer'
+import sendQuiz from '../../api/quiz'
 const QuizFinish =  (props) => {
     return (
         <div class="quizmain">
@@ -11,7 +12,7 @@ const QuizFinish =  (props) => {
             <div class="quizmain_text">
                 Based on your answers, we will provide you with your best matches first.
             </div>
-            <div class="big-teal-button-box">
+            <div class="big-teal-button-box" onClick={() => sendQuiz(quizTransformer(props.quiz))}>
                 Start Matching!
             </div>
             <QuizBackward />

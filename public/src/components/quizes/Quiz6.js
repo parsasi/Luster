@@ -11,7 +11,7 @@ class Quiz6 extends QuizParent{
             <div class="quizmain">
                 <img src="../imgs/pray.svg" class="pray_img"/>
 
-                <div class="quizquestion">
+                <div class="quizquestion" question="religion">
                     Are you religious?
                 </div>     
 

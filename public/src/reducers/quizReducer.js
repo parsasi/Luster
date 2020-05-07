@@ -53,10 +53,11 @@ export default (state = quizReducerDefaultState, action) => {
         case 'QUIZ_QUESTION_ANSWERED':
           const answer = action.data.answer
           const question = action.data.question
-          console.log(answer , question)
+          const questionText = action.data.questionText
           return state.map(item => {
             if(item.component === question){
               item.answer = answer
+              item.questionText = questionText
             }
             return item
           })
