@@ -11,7 +11,7 @@ class Quiz4 extends QuizParent{
             <div class="quizmain">
                 <img src="../imgs/smoke.svg" class="smoke_img"/>
 
-                <div class="quizquestion">
+                <div class="quizquestion" question="smoke">
                     Do you smoke?
                 </div>     
 

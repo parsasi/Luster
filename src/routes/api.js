@@ -3,7 +3,7 @@ const router = express.Router()
 const detokenize = require('../helpers/detokenize')
 const signup = require('../helpers/signup')
 const singin = require('../helpers/signin')
-
+const quiz = require('../helpers/quiz')
 module.exports = (database , authentication) => {
     router.get('/' , authentication.protected ,(req,res) => {
         res.json(req.user)
@@ -52,6 +52,20 @@ module.exports = (database , authentication) => {
         .catch(e => {
             res.statusCode = 500
             res.json(e)
+        })
+    })
+
+    router.post('/quiz' , authentication.protected , (req,res) => {
+        if(!req.body.quiz){
+            req.statusCode = 500
+            res.json({error : true , message : 'Invalid input'})
+            return
+        }
+        // console.log('req.user inside the route : ' , req.user)
+        quiz(database , req.user , req.body.quiz)
+        .then(data => res.json({successful : true}))
+        .catch(e => {
+            res.json({successful : false , error : e})
         })
     })
     return router

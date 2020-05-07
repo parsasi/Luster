@@ -12,14 +12,16 @@ class Quiz5 extends QuizParent{
     }
     choiceHandle(e){
         const selectedValue = e.target.value
-        this.props.dispatch({type : 'QUIZ_QUESTION_ANSWERED' , data : {question : this.props.index , answer : selectedValue}})
+        const questionText = document.querySelector('.quizquestion').getAttribute('question')
+
+        this.props.dispatch({type : 'QUIZ_QUESTION_ANSWERED' , data : {question : this.props.index , answer : selectedValue ,  questionText : questionText }})
     }
     render(){
         return (
             <div class="quizmain">
                 <img src="../imgs/zodiac.svg" class="zodiac_img"/>
 
-                <div class="quizquestion">
+                <div class="quizquestion" question="star">
                     What is your star sign?
                 </div>     
 
