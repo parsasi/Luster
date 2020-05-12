@@ -63,7 +63,6 @@ module.exports = (database , authentication) => {
             res.json({error : true , message : 'Invalid input'})
             return
         }
-        // console.log('req.user inside the route : ' , req.user)
         quiz(database , req.user , req.body.quiz)
         .then(data => res.json({successful : true}))
         .catch(e => {
