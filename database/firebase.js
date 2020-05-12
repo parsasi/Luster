@@ -26,6 +26,16 @@ class Database{
       this.db.collection('users').doc(id).set(user , {merge : true})
       .catch(e => console.log(e))
     }
+    async getUserAllSwipes(id){
+      const user = await this.db.collection('users').doc(id)
+      // `users/${id}`
+      return this.db.collection('swipes').where('swiper' , '==' ,  user).get()
+    }
+    getUsersNewSwipe(gender){
+      // const user = await this.db.collection('users').doc(id).data()
+      return this.db.collection('users').where('gender' , 'in' , gender).limit(50).get()
+    }
+
 }
 
 const db = new Database()

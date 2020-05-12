@@ -32,6 +32,7 @@ class SignUp extends React.Component{
                 this.props.dispatch({
                     type : 'USER_SIGNED_UP',
                 })
+                localStorage.setItem('justSignedUp' , true)
                 this.props.history.push("/signin");
             })
             .catch(e => {
