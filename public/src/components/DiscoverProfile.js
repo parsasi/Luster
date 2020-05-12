@@ -4,6 +4,7 @@ import '../styles/discovery-profile.css'
 import DiscoverSingleProfile from './DiscoverSingleProfile'
 import newSwipe from '../api/newSwipe'
 import DiscoverButtons from './DiscoverButtons'
+import Loading from './Loading'
 class DiscoverProfile extends React.Component{
     constructor(props){
         super(props)
@@ -28,7 +29,7 @@ class DiscoverProfile extends React.Component{
     render(){
         return (
             <div class="discovery-profile-box">
-                {this.props.swipe.loading && <p>loading</p>}
+                {this.props.swipe.loading && <Loading />}
                 <DiscoverSingleProfile user={this.props.swipe.currentUser}/>
                 <DiscoverButtons />
             </div>
