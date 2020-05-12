@@ -9,18 +9,18 @@ class DiscoverButtons extends React.Component{
         this.swiped = this.swiped.bind(this)
     }
     swiped(liked){
-        this.props.dispatch({type : 'CURRENT_USER_SWIPED' , data : {liked}})
-        this.loadNewProfile()
+        this.loadNewProfile(liked)
     }
-    loadNewProfile(){
+    loadNewProfile(liked){
         this.props.dispatch({type : 'LOADING_NEW_USER'})
-        swiped(this.props.swipe.prevUser.email , this.props.swipe.prevUser.liked)
+        console.log(this.props.swipe.currentUser.email , this.props.swipe.currentUser.liked)
+        swiped(this.props.swipe.currentUser.email , this.props.swipe.currentUser.liked)
         .then(data => {
-            console.warn('IM LOADING NEW PROFILES')
             return  newSwipe()
         })
         .then(data => {
             if(data !== {}){
+                this.props.dispatch({type : 'CURRENT_USER_SWIPED' , data : {liked}})
                 this.props.dispatch({type : 'FINISHED_LOADING_NEW_USER' , data : data})
             }
         })
