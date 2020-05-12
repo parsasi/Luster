@@ -2,14 +2,36 @@ import React from 'react';
 import '../styles/edit-profile.css'
 import '../styles/my-profile.css'
 import '../styles/other-buttons.css'
+import getMyProfile from '../api/getMyProfile'
+import calculateAge from '../helpers/calculateAge'
 import MyProfileEditImages from  './MyProfileEditImages'
-export default (props) => (
-    <div class="edit-profile-page-box">
+export default class MyProfileEdit extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            userProfile : {
+                name : '',
+                dob : 0,
+                gender : '',
+                city : ''
+            }
+        }
+    }
+    componentDidMount(){
+        getMyProfile()
+        .then(user => {
+            this.setState(() => ({userProfile : user}))
+        })
+        .catch(console.log)
+    }
+    render(){
+        return (
+            <div class="edit-profile-page-box">
             <div class="edit-profile-top">
-                <div class="profile-name">Alecia</div>
-                <div class="white-button-outer finish-button"> 
+                <div class="profile-name">{this.state.userProfile.name}</div>
+                <button class="white-button-outer finish-button"> 
                     Finish
-                </div>
+                </button>
             </div>
             <div class="profile-content">
                 <MyProfileEditImages />
@@ -17,9 +39,9 @@ export default (props) => (
                     <div class="edit-profile-note">
                         * Information is grey cannot be edited
                     </div> <br/>
-                    <div class="profile-info"><b>Age:</b> <span class="info-greyed">24</span></div>
-                    <div class="profile-info"><b>Gender:</b> <span class="info-greyed">Female</span></div> 
-                    <div class="profile-info"><b>Location:</b> <span class="location">Burnaby <img src="imgs/aim.png"/></span></div>
+                    <div class="profile-info"><b>Age:</b> <span class="info-greyed">{calculateAge(new Date(this.state.userProfile.dob))}</span></div>
+                    <div class="profile-info"><b>Gender:</b> <span class="info-greyed">{this.state.userProfile.gender}</span></div> 
+                    <div class="profile-info"><b>Location:</b> <span class="location"><img/>{this.state.userProfile.city}</span></div>
                     <label class="profile-info" for="looking-for"><b>Looking For:</b></label>
                         <select class="info-drop-down profile-info" name="looking-for">
                             <option value="relationship" selected>Relationship</option>
@@ -70,4 +92,6 @@ export default (props) => (
                 </div>
             </div>
         </div>
-)
+        )
+    }
+}

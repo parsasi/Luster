@@ -4,6 +4,8 @@ const detokenize = require('../helpers/detokenize')
 const signup = require('../helpers/signup')
 const singin = require('../helpers/signin')
 const quiz = require('../helpers/quiz')
+const getUser = require('../helpers/getUser')
+const newSwipe = require('../helpers/newSwipe')
 module.exports = (database , authentication) => {
     router.get('/' , authentication.protected ,(req,res) => {
         res.json(req.user)
@@ -61,12 +63,31 @@ module.exports = (database , authentication) => {
             res.json({error : true , message : 'Invalid input'})
             return
         }
-        // console.log('req.user inside the route : ' , req.user)
         quiz(database , req.user , req.body.quiz)
         .then(data => res.json({successful : true}))
         .catch(e => {
             res.json({successful : false , error : e})
         })
+    })
+
+    router.get('/user' , authentication.protected ,(req,res) => {
+        getUser(database , req.user)
+        .then(user => {
+            res.json(user)
+        })
+        .catch(err => {
+            console.log(err)
+            res.statusCode = 500
+            res.json(err)
+        })
+    })
+
+    router.get('/swipe' , authentication.protected , (req,res) => {
+        newSwipe(database , req.user)
+        .then(data => {
+            res.json(data)
+        })
+        .catch(e => console.log(e))
     })
     return router
 };

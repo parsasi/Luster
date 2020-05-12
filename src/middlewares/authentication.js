@@ -6,7 +6,6 @@ module.exports.protected = (req,res,next) => {
         detokenize(req.headers.user)
         .then(data => {
             req.user = data
-            // console.log('req.user inside the middleware :' , req.user)
             next()
             return
         })

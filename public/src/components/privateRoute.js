@@ -11,7 +11,7 @@ class ProtectedRoute extends React.Component{
     componentWillMount(){
         const token = localStorage.getItem('token')
         if(token){
-            if(this.props.user.token){
+            if(this.state.token){
                 this.setState(()=>({authenticated : true}))
             }else{
                 detokenize(token)
