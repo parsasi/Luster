@@ -6,6 +6,7 @@ const singin = require('../helpers/signin')
 const quiz = require('../helpers/quiz')
 const getUser = require('../helpers/getUser')
 const newSwipe = require('../helpers/newSwipe')
+const addSwipe = require('../helpers/addSwipe')
 module.exports = (database , authentication) => {
     router.get('/' , authentication.protected ,(req,res) => {
         res.json(req.user)
@@ -88,6 +89,20 @@ module.exports = (database , authentication) => {
             res.json(data)
         })
         .catch(e => console.log(e))
+    })
+    router.post('/swiped' , authentication.protected , (req,res) => {
+        console.log('got the req')
+        const swipeeEmail = req.body.swipeeEmail
+        const isLiked = req.body.isLiked == 'true'
+        addSwipe(database , req.user , swipeeEmail , isLiked)
+        .then(data => {
+            res.statusCode = 200
+            res.json()
+        })
+        .catch(err => {
+            res.statusCode = 500
+            res.json(err)
+        })
     })
     return router
 };

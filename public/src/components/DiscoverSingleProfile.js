@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/profile.css'
-
+import calculateAge from '../helpers/calculateAge'
 
 export default (props) => (
     <div>
@@ -15,11 +15,11 @@ export default (props) => (
                 </div>
             </div>
             <div class="profile_info">
-                <div class="profile_info_name">Kevin</div>
+                <div class="profile_info_name">{props.user.name}</div>
                 <div class="profile_info_desc">
-                    <span class="profile_info_desc_location">Vancouver</span>
-                    <span class="profile_info_desc_gender">Male</span>
-                    <span class="profile_info_desc_age">25</span>
+                    <span class="profile_info_desc_location">{props.user.city}</span>
+                    <span class="profile_info_desc_gender">{props.user.Gender}</span>
+                    <span class="profile_info_desc_age">{!isNaN(calculateAge(new Date(props.user.dob))) && calculateAge(new Date(props.user.dob))}</span>
                 </div>
                 <div class="profile_info_blur">
                     Looking for: Relationship <br/>
@@ -27,19 +27,11 @@ export default (props) => (
                     Alcohol: Socially <br/>
                     Sign: Pisces
                 </div>
+            </div>
+            <div class="profile_report">
+                <img src="imgs/dots.svg" />
+            </div>
         </div>
-        <div class="profile_report">
-            <img src="imgs/dots.svg" />
-            </div>
-            </div>
-            <div class="like-and-dislike-buttons-box">
-                <button class="like-dislike-button-outer">
-                    <img src="./imgs/X.svg" />
-                </button>
-                <button class="like-dislike-button-outer">
-                    <img src="./imgs/Heart.svg" />
-                </button>
-            </div>    
      </div>
 )
 

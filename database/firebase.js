@@ -12,7 +12,7 @@ class Database{
         this.db = this.admin.firestore()
     }
     getUsers(){
-        return this.db.collection('users').get()
+      return this.db.collection('users').get()
     }
     addUser(user){
       return this.db.collection("users").add({
@@ -34,6 +34,11 @@ class Database{
     getUsersNewSwipe(gender){
       // const user = await this.db.collection('users').doc(id).data()
       return this.db.collection('users').where('gender' , 'in' , gender).limit(50).get()
+    }
+    addSwipe(swipe){
+      swipe.swipee = this.db.collection('users').doc(swipe.swipee)
+      swipe.swiper = this.db.collection('users').doc(swipe.swiper)
+      return this.db.collection('swipes').add({...swipe , timestamp : this.admin.firestore.FieldValue.serverTimestamp()})
     }
 
 }

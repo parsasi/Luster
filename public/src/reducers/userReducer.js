@@ -7,7 +7,7 @@ const userReducerDefaultState = {
     loginError: undefined,
     signedUp: false,
     token : ''
-};
+}
   
 export default (state = userReducerDefaultState, action) => {
     switch (action.type) {
@@ -36,5 +36,5 @@ export default (state = userReducerDefaultState, action) => {
       default:
         return state;
     }
-  };
+  }
   

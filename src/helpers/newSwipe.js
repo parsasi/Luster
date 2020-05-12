@@ -33,6 +33,7 @@ module.exports = (database , user) => {
         })
         .then(snapshot => {
             const newUser = snapshot.data()
+            delete newUser.password
             resolve(newUser)
         })
         .catch(err => {
