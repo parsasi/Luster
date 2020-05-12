@@ -87,7 +87,7 @@ module.exports = (database , authentication) => {
         newSwipe(database , req.user)
         .then(data => {
             res.json(data)
-        }).id
+        })
         .catch(e => console.log(e))
     })
     router.post('/swiped' , authentication.protected , (req,res) => {

@@ -36,6 +36,8 @@ class Database{
       return this.db.collection('users').where('gender' , 'in' , gender).limit(50).get()
     }
     addSwipe(swipe){
+      swipe.swipee = this.db.collection('users').doc(swipe.swipee)
+      swipe.swiper = this.db.collection('users').doc(swipe.swiper)
       return this.db.collection('swipes').add({...swipe , timestamp : this.admin.firestore.FieldValue.serverTimestamp()})
     }
 

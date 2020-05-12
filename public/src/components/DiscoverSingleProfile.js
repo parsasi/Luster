@@ -27,19 +27,11 @@ export default (props) => (
                     Alcohol: Socially <br/>
                     Sign: Pisces
                 </div>
+            </div>
+            <div class="profile_report">
+                <img src="imgs/dots.svg" />
+            </div>
         </div>
-        <div class="profile_report">
-            <img src="imgs/dots.svg" />
-            </div>
-            </div>
-            <div class="like-and-dislike-buttons-box">
-                <button class="like-dislike-button-outer">
-                    <img src="./imgs/X.svg" />
-                </button>
-                <button class="like-dislike-button-outer">
-                    <img src="./imgs/Heart.svg" />
-                </button>
-            </div>    
      </div>
 )
 

@@ -14,8 +14,8 @@ module.exports = (database , user , swipedUserEmail , isLiked) => {
             const swipe = {
                 isSuper : false,
                 liked : isLiked,
-                swiper : `/users/${user.id}`,
-                swipee : `/users/${swipedUser.id}`,
+                swiper : `${user.id}`,
+                swipee : `${swipedUser.id}`,
             }
             return database.addSwipe(swipe)
         })
