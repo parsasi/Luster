@@ -5,6 +5,8 @@ import DiscoverSingleProfile from './DiscoverSingleProfile'
 import newSwipe from '../api/newSwipe'
 import DiscoverButtons from './DiscoverButtons'
 import Loading from './Loading'
+import Modal from 'react-modal'
+import MatchedPopUp from './MatchPopUp'
 class DiscoverProfile extends React.Component{
     constructor(props){
         super(props)
@@ -30,8 +32,8 @@ class DiscoverProfile extends React.Component{
         return (
             <div class="discovery-profile-box">
                 {this.props.swipe.loading && <Loading />}
-                <DiscoverSingleProfile user={this.props.swipe.currentUser}/>
-                <DiscoverButtons />
+                {!this.props.swipe.matched ? <DiscoverSingleProfile user={this.props.swipe.currentUser}/> : <MatchedPopUp/>}
+                {!this.props.swipe.matched && <DiscoverButtons />}
             </div>
         )
     }
@@ -45,3 +47,4 @@ const mapStateToProps = (state) => {
   
 export default connect(mapStateToProps)(DiscoverProfile);
   
+// <Modal isOpen={this.props.swipe.matched}><MatchedPopUp /></Modal>

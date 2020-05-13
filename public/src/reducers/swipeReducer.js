@@ -11,9 +11,11 @@ const userDefaultSwipeReducer = {
 }
 
 const swipeReducerDefaultState = {
-    currentUser : userDefaultSwipeReducer,
-    prevUser : {...userDefaultSwipeReducer , liked : false , matched : false},
-    loading : false
+    currentUser : {...userDefaultSwipeReducer},
+    prevUser : {...userDefaultSwipeReducer , liked : false},
+    loading : false,
+    matched : false,
+    matchedUser : userDefaultSwipeReducer
 };
   
 export default (state = swipeReducerDefaultState, action) => {
@@ -36,10 +38,17 @@ export default (state = swipeReducerDefaultState, action) => {
             currentUser : action.data,
             loading : false
         }
-      case 'PREV_SWIPE_RESULT_RECIEVED':
+      case 'SWIPE_RESULT_RECIEVED':
         return {
             ...state,
-            prevUser: {...state.prevUser, matched : action.data.matched}
+            matched:  action.data.matched,
+            matchedUser: action.data.user
+        }
+      case 'RESET_MATCHED':
+        return{
+          ...state,
+          matched:  false,
+          matchedUser: userDefaultSwipeReducer
         }
       default:
         return state;

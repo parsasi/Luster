@@ -8,7 +8,7 @@
     font-family: "Raleway", sans-serif;
     display: inline-flex;
     flex-direction: column;
-    width: 60vw;
+    width: 40vw;
     height: 80vh;
     padding: 25px;
     padding-left: 10%;
@@ -16,7 +16,6 @@
     background-color: #B2DFDB;
     border-radius: 15px;
     position: relative;
-    margin-left: 5%;
 }
 
 .matchpopup_comp {
@@ -48,25 +47,25 @@
 
 /* INFO START */
 
-.profile_info {
+.pop-profile_info {
     margin-left: 10%;
     position: relative;
     top: -270px;
     right: -300px;
 }
 
-.profile_picture img {
+.pop-profile_picture img {
     width: 200px;
     margin-left: 5%;
     border-radius: 30px;
 }
 
-.profile_info_name {
+.pop-profile_info_name {
     font-size: 40pt;
     padding-bottom: 20px;
 }
 
-.profile_info_desc span {
+.pop-profile_info_desc span {
     display: flex;
     flex-direction: column;
     font-size: 20pt;
