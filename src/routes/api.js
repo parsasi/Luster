@@ -8,6 +8,7 @@ const getUser = require('../helpers/getUser')
 const newSwipe = require('../helpers/newSwipe')
 const addSwipe = require('../helpers/addSwipe')
 const getSwipe = require('../helpers/getSwipe')
+const getUserAllMatches = require('../helpers/getUserAllMatches')
 module.exports = (database , authentication) => {
     router.get('/' , authentication.protected ,(req,res) => {
         res.json(req.user)
@@ -105,6 +106,15 @@ module.exports = (database , authentication) => {
         .catch(err => {
             res.statusCode = 500
             res.json(err)
+        })
+    })
+
+    router.get('/matches' , authentication.protected , (req , res) => {
+        getUserAllMatches(database , req.user)
+        .then(data => res.json(data))
+        .catch(e => {
+            res.statusCode = 500
+            res.json(e)
         })
     })
     return router

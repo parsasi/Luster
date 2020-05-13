@@ -50,6 +50,22 @@ class Database{
       userTwo = this.db.collection('users').doc(userTwo)
       return this.db.collection('matches').add({userOne , userTwo , isActive : true, timestamp : this.admin.firestore.FieldValue.serverTimestamp()})
     }
+    async getUserAllMatches(user){
+      return new Promise((resolve, reject) => {
+        user = this.db.collection('users').doc(user)
+        const userOne = this.db.collection('matches').where('userOne' , '==' , user).get()
+        const userTwo = this.db.collection('matches').where('userTwo' , '==' , user).get()
+        let allMatches = []
+        Promise.all([userOne , userTwo])
+        .then(results => {
+          results.forEach(item => allMatches  = [...allMatches , ...item.docs])
+          resolve(allMatches)
+        })
+        .catch(err => {
+          reject(err)
+        })
+      })
+    }
 }
 
 const db = new Database()
