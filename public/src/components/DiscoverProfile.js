@@ -5,13 +5,12 @@ import DiscoverSingleProfile from './DiscoverSingleProfile'
 import newSwipe from '../api/newSwipe'
 import DiscoverButtons from './DiscoverButtons'
 import Loading from './Loading'
-import Modal from 'react-modal'
+// import Modal from 'react-modal'
 import MatchedPopUp from './MatchPopUp'
 class DiscoverProfile extends React.Component{
     constructor(props){
         super(props)
         this.loadNewProfile = this.loadNewProfile.bind(this)
-        // !this.props.swipe.currentUser.email && this.loadNewProfile()
     }
     componentWillMount(){
         this.props.dispatch({type : 'LOADING_NEW_USER'})
