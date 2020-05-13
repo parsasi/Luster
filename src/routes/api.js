@@ -91,9 +91,9 @@ module.exports = (database , authentication) => {
         .catch(e => console.log(e))
     })
     router.post('/swiped' , authentication.protected , (req,res) => {
-        console.log('got the req')
+        console.log(req.body)
         const swipeeEmail = req.body.swipeeEmail
-        const isLiked = req.body.isLiked == 'true'
+        const isLiked = req.body.isLiked
         addSwipe(database , req.user , swipeeEmail , isLiked)
         .then(data => {
             res.statusCode = 200
