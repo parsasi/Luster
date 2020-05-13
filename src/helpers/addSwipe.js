@@ -1,5 +1,6 @@
 module.exports = (database , user , swipedUserEmail , isLiked) => {
     return new Promise((resolve,reject) => {
+        let swipedUser
         database.getUser({email : user.email})
         .then(snapshot => {
             if(snapshot.docs.length > 0){
@@ -10,7 +11,7 @@ module.exports = (database , user , swipedUserEmail , isLiked) => {
             }
         })
         .then(snapshot => {
-            const swipedUser = snapshot.docs[0]
+            swipedUser = snapshot.docs[0]
             const swipe = {
                 isSuper : false,
                 liked : isLiked,
@@ -19,7 +20,7 @@ module.exports = (database , user , swipedUserEmail , isLiked) => {
             }
             return database.addSwipe(swipe)
         })
-        .then(data => resolve(data))
+        .then(data => resolve({swiper : user  , swipee : swipedUser}))
         .catch(e => {
             reject(e)
         })

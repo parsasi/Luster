@@ -40,7 +40,16 @@ class Database{
       swipe.swiper = this.db.collection('users').doc(swipe.swiper)
       return this.db.collection('swipes').add({...swipe , timestamp : this.admin.firestore.FieldValue.serverTimestamp()})
     }
-
+    getSwipe(swipe){
+      swipe.swipee = this.db.collection('users').doc(swipe.swipee)
+      swipe.swiper = this.db.collection('users').doc(swipe.swiper)
+      return this.db.collection('swipes').where('swiper' , '==' , swipe.swiper).where('swipee' , '==', swipe.swipee).limit(1).get()
+    }
+    addMatch({userOne , userTwo}){
+      userOne = this.db.collection('users').doc(userOne)
+      userTwo = this.db.collection('users').doc(userTwo)
+      return this.db.collection('matches').add({userOne , userTwo , isActive : true, timestamp : this.admin.firestore.FieldValue.serverTimestamp()})
+    }
 }
 
 const db = new Database()

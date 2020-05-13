@@ -7,6 +7,7 @@ const quiz = require('../helpers/quiz')
 const getUser = require('../helpers/getUser')
 const newSwipe = require('../helpers/newSwipe')
 const addSwipe = require('../helpers/addSwipe')
+const getSwipe = require('../helpers/getSwipe')
 module.exports = (database , authentication) => {
     router.get('/' , authentication.protected ,(req,res) => {
         res.json(req.user)
@@ -91,15 +92,18 @@ module.exports = (database , authentication) => {
         .catch(e => console.log(e))
     })
     router.post('/swiped' , authentication.protected , (req,res) => {
-        console.log(req.body)
         const swipeeEmail = req.body.swipeeEmail
         const isLiked = req.body.isLiked
         addSwipe(database , req.user , swipeeEmail , isLiked)
         .then(data => {
+            return getSwipe(database , data.swipee.id , data.swiper.id)
+        })
+        .then(isAMatch => {
             res.statusCode = 200
             res.json()
         })
         .catch(err => {
+            console.log(err)
             res.statusCode = 500
             res.json(err)
         })

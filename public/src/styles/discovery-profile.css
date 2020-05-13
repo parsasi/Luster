@@ -26,3 +26,4 @@
     display: flex;
     justify-content: space-around;
 }
+::selection { background: transparent; }
