@@ -14,7 +14,8 @@ class DiscoverButtons extends React.Component{
     loadNewProfile(liked){
         this.props.dispatch({type : 'LOADING_NEW_USER'})
         swiped(this.props.swipe.currentUser.email , liked)
-        .then(data => {
+        .then(data =>{
+            this.props.dispatch({type : 'SWIPE_RESULT_RECIEVED' , data : {matched : data.matched , user : this.props.swipe.currentUser}})
             return  newSwipe()
         })
         .then(data => {
@@ -28,7 +29,7 @@ class DiscoverButtons extends React.Component{
     render(){
         return (
             <div class="like-and-dislike-buttons-box">
-                <button class="like-dislike-button-outer"onClick={() => {this.swiped(false)}}>
+                <button class="like-dislike-button-outer" onClick={() => {this.swiped(false)}}>
                     <img src="./imgs/X.svg" />
                 </button>
                 <button class="like-dislike-button-outer" onClick={() => {this.swiped(true)}}>

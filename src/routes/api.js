@@ -100,10 +100,9 @@ module.exports = (database , authentication) => {
         })
         .then(isAMatch => {
             res.statusCode = 200
-            res.json()
+            res.json({matched : isAMatch})
         })
         .catch(err => {
-            console.log(err)
             res.statusCode = 500
             res.json(err)
         })
