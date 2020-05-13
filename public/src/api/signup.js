@@ -4,7 +4,6 @@ export default (user) => {
     return new Promise((resolve, reject) => {
         axios.post(`${serverURL}api/signup` , {user:user})
         .then(data => {
-            console.log(data)
             resolve()
         })
         .catch(e => reject(e))

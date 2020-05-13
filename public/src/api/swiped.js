@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {serverURL } from '../enviroment'
 export default (swipeeEmail , isLiked) => {
+  console.log(isLiked)
     return new Promise((resolve, reject) => {
         const config  = {
             headers: {
