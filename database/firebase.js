@@ -45,10 +45,11 @@ class Database{
       swipe.swiper = this.db.collection('users').doc(swipe.swiper)
       return this.db.collection('swipes').where('swiper' , '==' , swipe.swiper).where('swipee' , '==', swipe.swipee).limit(1).get()
     }
-    addMatch({userOne , userTwo}){
-      userOne = this.db.collection('users').doc(userOne)
-      userTwo = this.db.collection('users').doc(userTwo)
-      return this.db.collection('matches').add({userOne , userTwo , isActive : true, timestamp : this.admin.firestore.FieldValue.serverTimestamp()})
+    addMatch({swiper , swipee}){
+      // swiper = this.db.collection('users').doc(swiper)
+      // swipee = this.db.collection('users').doc(swipee)
+      // return this.db.collection('matches').add({userOne , userTwo , isActive : true, timestamp : this.admin.firestore.FieldValue.serverTimestamp()})
+      // this.db.collection('user').doc(swiper).update({match })
     }
     async getUserAllMatches(user){
       return new Promise((resolve, reject) => {

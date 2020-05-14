@@ -16,6 +16,11 @@ module.exports = (database , user) => {
             });
             return Promise.all(arrayOfPromises)
         })
+        .then(arrayOfData => {
+            arrayOfData.forEach((item) => {
+                item.userOne = item.userOne.get()
+            })
+        })
         .then(results => {
             console.log(results)
             resolve({})

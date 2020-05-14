@@ -10,7 +10,7 @@ module.exports = (database , swiper , swipee) => {
         })
         .then(data => {
             if(data.liked){
-                database.addMatch({userOne : data.swiper.id , userTwo : data.swipee.id})
+                database.addMatch({swiper : data.swiper , swipee : data.swipee})
                 resolve(true)
             }else{
                 resolve(false)

@@ -108,7 +108,6 @@ module.exports = (database , authentication) => {
             res.json(err)
         })
     })
-
     router.get('/matches' , authentication.protected , (req , res) => {
         getUserAllMatches(database , req.user)
         .then(data => res.json(data))
