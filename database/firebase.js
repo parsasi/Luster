@@ -45,11 +45,13 @@ class Database{
       swipe.swiper = this.db.collection('users').doc(swipe.swiper)
       return this.db.collection('swipes').where('swiper' , '==' , swipe.swiper).where('swipee' , '==', swipe.swipee).limit(1).get()
     }
-    addMatch({swiper , swipee}){
-      // swiper = this.db.collection('users').doc(swiper)
-      // swipee = this.db.collection('users').doc(swipee)
-      // return this.db.collection('matches').add({userOne , userTwo , isActive : true, timestamp : this.admin.firestore.FieldValue.serverTimestamp()})
-      // this.db.collection('user').doc(swiper).update({match })
+    async addMatch({swiper , swipee}){
+      const swiperObj = await swiper.data()
+      const swipeeObj = await swipee.data()
+      swiperObj.matches = [... await swiperObj.matches , swipee]
+      swipeeObj.matches = [... await swipeeObj.matches , swiper]
+      return Promise.all([this.db.collection('users').doc(swiper.id).update({matches : swiperObj.matches}),
+      this.db.collection('users').doc(swiper.id).update({matches : swiperObj.matches})])
     }
     async getUserAllMatches(user){
       return new Promise((resolve, reject) => {

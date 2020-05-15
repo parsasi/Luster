@@ -1,3 +1,5 @@
+const addMatch  = require('./addMatch')
+
 module.exports = (database , swiper , swipee) => {
     return new Promise((resolve,reject) => {
         database.getSwipe({swiper,swipee})
@@ -10,12 +12,20 @@ module.exports = (database , swiper , swipee) => {
         })
         .then(data => {
             if(data.liked){
-                database.addMatch({swiper : data.swiper , swipee : data.swipee})
-                resolve(true)
+                addMatch(data)
+                .then(data => resolve(true))
+                .catch(e => {
+                    console.log(e)
+                    reject(e)
+                })
             }else{
                 resolve(false)
             }
         })
-        .catch(e => reject(e))
+        .catch(e => {
+            console.info('Faced some issues ' , e)
+            reject(e)
+        })
     })
 }
+
