@@ -67,7 +67,7 @@
     margin: 10px;
     padding: 15px;
     max-width: 100%;
-    overflow: auto;
+    /* min-height:200px; */
     background-color: #B2DFDB;
     display: flex;
     font-size: 13pt;

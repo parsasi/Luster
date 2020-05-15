@@ -6,6 +6,7 @@ import SingleText from '../components/SingleText'
 import ChatInput from '../components/ChatInput'
 import {connect} from 'react-redux'
 import getMatches from '../api/getMatches'
+import Loading from './Loading'
 
 class Chats extends React.Component{
     constructor(props){
@@ -13,6 +14,7 @@ class Chats extends React.Component{
         this.getAllMacthes = this.getAllMacthes.bind(this)
     }
     componentDidMount(){
+        this.props.dispatch({type : 'LOADING_ALL_USERS'})
         this.getAllMacthes()
     }
     getAllMacthes(){
@@ -22,6 +24,7 @@ class Chats extends React.Component{
     render(){
         return(
             <div className="chat-page-box">
+            {this.props.text.loading && <Loading />}
                 <div class="all-chats">
                     {this.props.text.allUsers.map(item => <ChatsAllChats key={item.email} name={item.name} id={item.email} />)}
                 </div>
@@ -29,8 +32,6 @@ class Chats extends React.Component{
                     <InChatProfile user={this.props.text.currentUser} />
                     <div class="message-boxes">
                         {this.props.text.currentUser.messages.map(item => <SingleText text={item.text} time={item.time} own={item.own}/>)}
-                        <SingleText text="Hey! How are you?" time="08:54" own={false}/>
-                        <SingleText text="I am good! How are you?" time="08:55" own={true}/>
                     </div>
                     <ChatInput />
                 </div>
