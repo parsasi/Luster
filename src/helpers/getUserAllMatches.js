@@ -3,28 +3,28 @@ module.exports = (database , user) => {
         database.getUser({email : user.email})
         .then(snapshot => {
             if(snapshot.docs.length > 0){
-                const id = snapshot.docs[0].id
-                return database.getUserAllMatches(id)
+                user = snapshot.docs[0]
+                return database.getUserAllMatches(user)
             }else{
                 reject(new Error('User not found'))
             }
         })
-        .then(arrayOfMatches => {
-            const arrayOfPromises = []
-            arrayOfMatches.forEach(item => {
-                arrayOfPromises.push(item.data())
-            });
-            return Promise.all(arrayOfPromises)
-        })
-        .then(arrayOfData => {
-            arrayOfData.forEach((item) => {
-                item.userOne = item.userOne.get()
-            })
+        .then(results => {
+            const allMatches = []
+            results.forEach(item => allMatches.push(item.data()));
+            return Promise.all(allMatches)
         })
         .then(results => {
-            console.log(results)
-            resolve({})
+            const usersWithoutTheyrKeyInfo = results.map(item => {
+               delete item.matches
+               delete item.password
+               return item
+            })
+            resolve(usersWithoutTheyrKeyInfo)
         })
-        .catch(e => {reject(e); console.log('Error : '  , e)})
+        .catch(e => {
+            console.log(e)
+            reject(e)
+        })
     })
 }
