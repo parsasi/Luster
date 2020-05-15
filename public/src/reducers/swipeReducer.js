@@ -21,7 +21,6 @@ const swipeReducerDefaultState = {
 export default (state = swipeReducerDefaultState, action) => {
     switch (action.type) {
       case 'CURRENT_USER_SWIPED':
-        console.log({...state.currentUser , liked : action.data.liked})
         return {
           ...state,
           prevUser: {...state.currentUser , liked : action.data.liked} ,
