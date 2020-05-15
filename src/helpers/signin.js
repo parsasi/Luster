@@ -9,6 +9,9 @@ module.exports = (database ,{ email , password}) => {
                 bcrypt.compare(password , user.password)
                 .then(data => {
                     delete user.password
+                    if(user.matches){
+                        delete user.matches
+                    }
                     jwt.sign(user)
                     .then(token => {
                         user.token = token
