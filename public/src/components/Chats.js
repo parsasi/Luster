@@ -4,25 +4,51 @@ import '../styles/chat-page.css'
 import InChatProfile from './InChatProfile'
 import SingleText from '../components/SingleText'
 import ChatInput from '../components/ChatInput'
-export default (props) => (
-<div className="chat-page-box">
-    <div class="all-chats">
-        <ChatsAllChats name="Kevin Heart" />
-        <ChatsAllChats name="Alison Lee" />
-        <ChatsAllChats name="Karen"/>
-    </div>
-    <div className="current-chat">
-        <InChatProfile />
-        <div class="message-boxes">
-            
-            <SingleText text="Hey! How are you?" time="08:54" own={false}/>
-            <SingleText text="I am good! How are you?" time="08:55" own={true}/>
+import {connect} from 'react-redux'
+import getMatches from '../api/getMatches'
+import Loading from './Loading'
 
-        </div>
-        <ChatInput />
-    </div>
-</div>
-)
+class Chats extends React.Component{
+    constructor(props){
+        super(props)
+        this.getAllMacthes = this.getAllMacthes.bind(this)
+    }
+    componentDidMount(){
+        this.props.dispatch({type : 'LOADING_ALL_USERS'})
+        this.getAllMacthes()
+    }
+    getAllMacthes(){
+        getMatches()
+        .then(allMacthes => this.props.dispatch({type : 'LOADED_ALL_USERS' , data : allMacthes}))
+    }
+    render(){
+        return(
+            <div className="chat-page-box">
+            {this.props.text.loading && <Loading />}
+                <div class="all-chats">
+                    {this.props.text.allUsers.map(item => <ChatsAllChats key={item.email} name={item.name} id={item.email} />)}
+                </div>
+                <div className="current-chat">
+                    <InChatProfile user={this.props.text.currentUser} />
+                    <div class="message-boxes">
+                        {this.props.text.currentUser.messages.map(item => <SingleText text={item.text} time={item.time} own={item.own}/>)}
+                    </div>
+                    <ChatInput />
+                </div>
+            </div>
+        )
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+      user: state.user,
+      text: state.text
+    };
+  };
+  
+export default connect(mapStateToProps)(Chats);
+  
 
 
 // <div class="individual-message bubbleWrapper">

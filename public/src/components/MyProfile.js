@@ -65,5 +65,5 @@ const mapStateToProps = (state) => {
     };
   };
   
-  export default connect(mapStateToProps)(MyProfile);
+export default connect(mapStateToProps)(MyProfile);
   
