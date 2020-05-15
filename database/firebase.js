@@ -40,15 +40,45 @@ class Database{
       swipe.swiper = this.db.collection('users').doc(swipe.swiper)
       return this.db.collection('swipes').add({...swipe , timestamp : this.admin.firestore.FieldValue.serverTimestamp()})
     }
-    getSwipe(swipe){
-      swipe.swipee = this.db.collection('users').doc(swipe.swipee)
-      swipe.swiper = this.db.collection('users').doc(swipe.swiper)
-      return this.db.collection('swipes').where('swiper' , '==' , swipe.swiper).where('swipee' , '==', swipe.swipee).limit(1).get()
+    async getSwipe({swiper , swipee}){
+      let swipe = {}
+      swipe.swipee = this.db.collection('users').doc(swipee.id)
+      swipe.swiper = this.db.collection('users').doc(swiper.id)
+      const data = await this.db.collection('swipes').where('swiper' , '==' , swipe.swiper).where('swipee' , '==', swipe.swipee).limit(1).get()
+      return data
     }
-    addMatch({userOne , userTwo}){
-      userOne = this.db.collection('users').doc(userOne)
-      userTwo = this.db.collection('users').doc(userTwo)
-      return this.db.collection('matches').add({userOne , userTwo , isActive : true, timestamp : this.admin.firestore.FieldValue.serverTimestamp()})
+    async addMatch({swiper , swipee}){
+      const swiperSnapshot = await swiper.get()
+      const swipeeSnapshot = await swipee.get()
+      const swiperObj = await swiperSnapshot.data()
+      const swipeeObj = await swipeeSnapshot.data()
+      if(!swiperObj.matches){
+        swiperObj.matches = [] 
+      }
+      if(!swipeeObj.matches){
+        swipeeObj.matches = []
+      }
+      swiperObj.matches = [... await swiperObj.matches , swipee]
+      swipeeObj.matches = [... await swipeeObj.matches , swiper]
+      return Promise.all([this.db.collection('users').doc(swiper.id).update({matches : swiperObj.matches}),
+      this.db.collection('users').doc(swipee.id).update({matches : swipeeObj.matches})])
+    }
+    getUserAllMatches(user){
+      return new Promise(async (resolve,reject) => {
+        user  = await this.db.collection('users').doc(user.id).get()
+        user = await user.data()
+        if(user.matches){
+          const arrayOfSnapshots = []
+          user.matches.forEach(item => {
+            arrayOfSnapshots.push(item.get())
+          });
+          Promise.all(arrayOfSnapshots)
+          .then(results => resolve(results))
+          .catch(e => reject(e))
+        }else{
+          resolve([])
+        }
+      })
     }
 }
 

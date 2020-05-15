@@ -7,6 +7,7 @@ import getMyProfile from '../api/getMyProfile'
 import calculateAge from '../helpers/calculateAge'
 import MyProfileQuizAnswers from './MyProfileQuizAnswers'
 import Modal from 'react-modal'
+import Loading from './Loading'
 import Quizes from './Quizes'
 class MyProfile extends React.Component{
     constructor(props){
@@ -17,14 +18,16 @@ class MyProfile extends React.Component{
                 dob : 0,
                 gender : '',
                 city : ''
-            }
+            },
+            loading: false
         }
     }
     componentDidMount(){
+        this.setState(() => ({loading : true}))
         getMyProfile()
         .then(user => {
             console.log(user)
-            this.setState(() => ({userProfile : user}))
+            this.setState(() => ({userProfile : user , loading : false}))
         })
         .catch(console.log)
     }
@@ -32,6 +35,7 @@ class MyProfile extends React.Component{
         
         return (
             <div class="edit-profile-page-box">
+            {this.state.loading && <Loading />}
             {!!localStorage.getItem('justSignedUp') && <Modal isOpen={true}><Quizes /></Modal>}
                 <div class="edit-profile-top">
                     <div class="profile-name">{this.state.userProfile.name}</div>
