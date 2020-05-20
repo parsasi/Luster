@@ -10,17 +10,16 @@
     flex-direction: column;
     width: 60vw;
     height: auto;
-    padding: 25px;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 70px 10%;
     background-color: #B2DFDB;
     border-radius: 15px;
     position: relative;
-    margin-left: 5%;
+    /* margin-left: 5%; */
 }
 
 .landing_welcome {
     padding-bottom: 20px;
+    width:200px;
 }
 
 .landing_reveal span {
@@ -39,4 +38,19 @@
     justify-content: space-around;
     position: relative;
     top: 5%;
+}
+button.teal-button-box{
+    width:auto;
+    margin:10px 0;
+    padding:10px 20px;
+    cursor: pointer;
+}
+
+button.teal-button-box a{
+    color:white;
+    text-decoration: none;
+}
+.landing_welcome_container{
+    text-align: center;
+    margin-top:30px;
 }

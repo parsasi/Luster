@@ -3,7 +3,6 @@ import '../styles/profile.css'
 import calculateAge from '../helpers/calculateAge'
 
 export default (props) => (
-    <div>
         <div class="profile">
             <div class="profile_pictures">
                 <div class="profile_pictures_main">
@@ -32,7 +31,6 @@ export default (props) => (
                 <img src="imgs/dots.svg" />
             </div>
         </div>
-     </div>
 )
 
 

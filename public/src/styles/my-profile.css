@@ -81,3 +81,9 @@
 .individual-image img{
     background-color:white;
 }  
+
+.editProfile-button-outer a{
+    text-decoration: none;
+    color:black;
+    line-height:50px;
+}
