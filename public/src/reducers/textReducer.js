@@ -29,7 +29,7 @@ export default (state = textReducerDefaultState, action) => {
             loading : true
         }
     case 'LOADED_ALL_USERS':
-      const allUsers = action.data.map(item => ({...item , messages : [] , blur : 10 , image : 'imgs/avatar.png'}))
+      const allUsers = action.data.map(item => ({ image : 'imgs/avatar.png' , ...item , messages : [] , blur : 10 }))
       return {
         ...state,
         allUsers,

@@ -34,7 +34,7 @@ export default (state = swipeReducerDefaultState, action) => {
       case 'FINISHED_LOADING_NEW_USER':
         return {
             ...state,
-            currentUser : action.data,
+            currentUser : {image : ''  , ...action.data},
             loading : false
         }
       case 'SWIPE_RESULT_RECIEVED':

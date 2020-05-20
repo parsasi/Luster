@@ -8,7 +8,7 @@ export default class InChatProfileImage extends React.Component{
     render(){
         return(
             <div class="chat-profile-picture">
-                <img className="chat-profile-picture-img" src={this.props.image} />
+                <img draggable={false} className="chat-profile-picture-img" src={this.props.image} />
             </div>
         )
     }
