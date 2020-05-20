@@ -16,6 +16,7 @@
     border-radius: 15px;
     margin-left: 5%;
     display: flex;
+    position: relative;
     height: 79vh;
 }
 

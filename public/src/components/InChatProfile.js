@@ -14,7 +14,7 @@ export default (props) => (
         <div className="profile_info_desc">
             <span class="profile_info_desc_location">{props.user.city}</span> 
             <span class="profile_info_desc_gender">{props.user.gender}</span>
-            <span class="profile_info_desc_age">{calculateAge(new Date(props.user.dob))}</span>
+            <span class="profile_info_desc_age">{props.user.dob && calculateAge(new Date(props.user.dob))}</span>
         </div>
         <InChatProfileQuizAnswers quiz={props.user.quiz} blur={props.user.blur}/>
     </div>
