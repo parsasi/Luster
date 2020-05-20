@@ -33,8 +33,8 @@ const AppRouter = () => (
           <PrivateRoute path="/quiz" component={() => (<div className="main-page-wrapper"><Menu/><Quizes /></div>)}/>
           <Route path="/signin" component={SignIn}/>
           <Route path="/signup" component={SignUp}/>
-          <PrivateRoute path="/landing" component={Landing}/>
           <Route component={Contact} />
+          <Route path="/landing" component={Landing}/>
         </Switch>
       </div>
     </div>

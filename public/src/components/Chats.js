@@ -29,9 +29,9 @@ class Chats extends React.Component{
                     {this.props.text.allUsers.map(item => <ChatsAllChats key={item.email} name={item.name} id={item.email} />)}
                 </div>
                 <div className="current-chat">
-                    <InChatProfile user={this.props.text.currentUser} />
+                {this.props.text.currentUser && <InChatProfile user={this.props.text.currentUser} />}
                     <div class="message-boxes">
-                        {this.props.text.currentUser.messages.map(item => <SingleText text={item.text} time={item.time} own={item.own}/>)}
+                        {this.props.text.currentUser && this.props.text.currentUser.messages.map(item => <SingleText text={item.text} time={item.time} own={item.own}/>)}
                     </div>
                     <ChatInput />
                 </div>

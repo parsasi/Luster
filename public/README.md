@@ -1,68 +1,28 @@
+
+# Lustr, a web based dating app
+
+
+## Styleguid 
+This app uses [ AirBnb javascript style guide ](https://github.com/adobeio/styleguide/blob/master/opensource/doc-style.md). The style guide is chosen because of its clearity and simplicty. 
+
+## Team
+Lustr is articulated, designed and developed by:
+- Parsa Safavi: Lead Developer. Resposible for developing the back-end and front-end React.
+- Megan Holmes: Project Manager. Resposible for orchestrating the team, as well as the front-end design.
+- Caleb Teerling: Front-end developer. Responsible for a substantial part of the front-end design.
+- Evelyn Zhao: Design Team Member. Responbible for preparing the styleguid, as well as the competition analysis. 
+- Tanisha Patel: Design Team Member. Responbible for preparing the styleguid, as well as the competition analysis. 
+
+## Communication methods
+We communicated using [Slack](https://slack.com/) throughout the project. In-person meetings were held bi-weekly, before social-destancing was announced neccessery, during the 2020 covid-19 outbreak. As the situation grew tighter, due to covid-19, team-work became harder for the team members. Metting in-person was out of the question. Yet, our team managed to keep the each other informed, and on top of the work. We constantly communicated and readjusted throughout the project, despite the new situation, we had to get used to. We regularly touched bases and made sure that each of us knew what the each member is working on. Also, [Zoom Video Conferencing](zoom.us) was our tool for having online meetings.
+
+## Learning outcomes
+Lustr helped us learn and practice working with a team, with different backgrounds and experties. All of us managed to communicate and articulate ideas, despite the differences in the aspects we were working on. We learned to break down an ideas, creating small and comprehensive partitions. Overall, Lustr was the a preview to what we will face, in a real-world enviroment, when working with a team, on a shared outcome.
+
+## Roadblocks
+We did not anticipate limitations we later faced due to Covid-19, when begining to work on the project. Our individual plans were challanged, forcing us to readjust our methods of communication and participation. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+You can access Lustr at :[Lustr.online](http://lustr.online).
