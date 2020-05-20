@@ -2,13 +2,12 @@ import React from 'react';
 import '../styles/chat-page.css'
 import calculateAge from '../helpers/calculateAge' 
 import InChatProfileQuizAnswers from './InChatProfileQuizAnswers'
+import InChatProfileImage from './InChatProfileImage'
 export default (props) => (
     <div className="in-chat-profile">
     <div>
         <div class="profile_info_name">{props.user.name}</div>
-        <div class="chat-profile-picture">
-            <img src="imgs/testimgs/kevinprof.png" />
-        </div>
+        <InChatProfileImage image={props.user.image} blur={props.user.blur}/>
     </div>
     <div className="profile_info">
         <div className="profile_info_desc">
