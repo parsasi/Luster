@@ -39,10 +39,10 @@ class MyProfile extends React.Component{
             {!!localStorage.getItem('justSignedUp') && <Modal isOpen={true}><Quizes /></Modal>}
                 <div class="edit-profile-top">
                     <div class="profile-name">{this.state.userProfile.name}</div>
-                    <div class="editProfile-button-outer">
+                    <button class="editProfile-button-outer">
                         <img src="./imgs/Edit.svg"/>
                         <Link to="/edit">Edit Profile</Link>
-                    </div>
+                    </button>
 
                 </div>
                 <div class="profile-content">

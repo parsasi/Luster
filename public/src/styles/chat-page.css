@@ -16,6 +16,7 @@
     border-radius: 15px;
     margin-left: 5%;
     display: flex;
+    position: relative;
     height: 79vh;
 }
 
@@ -84,6 +85,7 @@
     height: 150px;
     object-fit: cover;
     border-radius: 15px;
+    background-color: #ffffff;
     border: 5px solid #E7FFF8;
 }
 

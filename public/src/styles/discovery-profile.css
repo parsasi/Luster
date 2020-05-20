@@ -8,10 +8,9 @@
     font-family: "Raleway", sans-serif;
     display: inline-flex;
     flex-direction: column;
-    width: 60vw;
+    width: 70vw;
     height: 84vh;
-    padding-left: 10%;
-    padding-right: 10%;
+    /* padding:10px 10%; */
     background-color: #B2DFDB;
     border-radius: 15px;
     position: relative;

@@ -11,13 +11,14 @@ class ChatInput extends React.Component{
         this.addMessage = this.addMessage.bind(this)
         this.textInput = this.textInput.bind(this)
     }
-    addMessage(text){
-        this.props.dispatch({type : 'ADD_TEXT' , data : {message : {text , time : getCurrentTime() , own : true}}})
+
+    addMessage(text , own){
+        this.props.dispatch({type : 'ADD_TEXT' , data : {message : {text , time : getCurrentTime() , own}}})
         this.props.dispatch({type : 'REDUCE_BLUR'})
     }
-    sendMessage(){
-        this.addMessage(document.querySelector('.message-input').value)
-        document.querySelector('.message-input').value = ""
+    sendMessage(text  = document.querySelector('.message-input').value, own = true){
+        this.addMessage(text , own)
+        if(document.querySelector('.message-input')) document.querySelector('.message-input').value = "";
     }
     textInput(e){
         if(e.charCode === 13){
@@ -33,8 +34,6 @@ class ChatInput extends React.Component{
         )
     }
 }
-
-
 const mapStateToProps = (state) => {
     return {
       user: state.user,

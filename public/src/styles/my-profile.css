@@ -13,7 +13,8 @@
     border-radius: 15px;
     margin-left: 5%;
     max-height: 80vh;
-    overflow: auto;
+    overflow: hidden;
+    position: relative;
     height: 80vh;
 }
 
@@ -81,3 +82,9 @@
 .individual-image img{
     background-color:white;
 }  
+
+.editProfile-button-outer a{
+    text-decoration: none;
+    color:black;
+    line-height:50px;
+}

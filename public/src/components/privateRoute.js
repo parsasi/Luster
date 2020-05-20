@@ -3,6 +3,7 @@ import {  Route, Redirect } from 'react-router-dom';
 import {connect} from 'react-redux'
 import detokenize from '../api/detokenize';
 import Signin from '../components/Signin'
+import Landing from '../components/Landing'
 class ProtectedRoute extends React.Component{
     constructor(props){
         super(props)
@@ -31,10 +32,9 @@ class ProtectedRoute extends React.Component{
     }
     render(){
         const Component = this.props.component
-        console.log(this.state)
         const Red = () => <Redirect to="/signin"/>
         //TODO: Redirect the user instead of rendering the component there
-        return (<Route {...this.props} component={this.state.authenticated ? Component : Signin } />)
+        return (<Route {...this.props} component={this.state.authenticated ? Component : Landing } />)
     }
 }
 
