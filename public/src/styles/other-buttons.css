@@ -2,10 +2,10 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50px;
-    margin: 10px;
+    margin: 0 10px 10px 10px;
     border:none;
     background:transparent;
     cursor: pointer;
@@ -19,6 +19,7 @@
 .like-dislike-button-outer img {
     /* max-width: 60px;
     max-height: 60px; */
+    width:100%;
     object-fit: contain;
 }
 
