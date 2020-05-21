@@ -1,4 +1,3 @@
-
 import React from 'react';
 import MyProfilePictures from './MyProfilePictures'
 import {connect} from 'react-redux'
@@ -9,6 +8,7 @@ import MyProfileQuizAnswers from './MyProfileQuizAnswers'
 import Modal from 'react-modal'
 import Loading from './Loading'
 import Quizes from './Quizes'
+import '../styles/teal-buttons.css'
 class MyProfile extends React.Component{
     constructor(props){
         super(props)
@@ -34,12 +34,12 @@ class MyProfile extends React.Component{
     render(){
         
         return (
-            <div class="edit-profile-page-box">
+            <div className="edit-profile-page-box">
             {this.state.loading && <Loading />}
             {!!localStorage.getItem('justSignedUp') && <Modal isOpen={true}><Quizes /></Modal>}
-                <div class="edit-profile-top">
-                    <div class="profile-name">{this.state.userProfile.name}</div>
-                    <button class="editProfile-button-outer">
+                <div className="edit-profile-top">
+                    <div className="profile-name">{this.state.userProfile.name}</div>
+                    <button class="editProfile-button-outer teal-button-box">
                         <img src="./imgs/Edit.svg"/>
                         <Link to="/edit">Edit Profile</Link>
                     </button>

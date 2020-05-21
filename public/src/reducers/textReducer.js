@@ -45,7 +45,7 @@ export default (state = textReducerDefaultState, action) => {
     case 'REDUCE_BLUR':
         const blurUser = state.currentUser
         if(blurUser.blur > 0){
-            blurUser.blur = blurUser.blur - 0.5
+            blurUser.blur = blurUser.blur - 1
         }
         const blurAllUsers = state.allUsers.map(item => {
             if(item.email === blurUser.email){

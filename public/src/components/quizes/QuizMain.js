@@ -5,8 +5,8 @@ import {connect} from 'react-redux'
 
 const QuizMain =  (props) => {
     return (
-        <div class="quizmain">
-            <img class="quizmain_title" src="../imgs/quiz.svg" />
+        <div class="quizmain quiz-main-main">
+            <img class="quizmain_title" src="../imgs/Quiz.png" />
             <div class="quizmain_text">
                 You are now ready to take our ten question match-making quiz. You may skip any question you like, but each answer you give helps us find your best matches!
                 <br/>

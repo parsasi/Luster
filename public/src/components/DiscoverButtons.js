@@ -30,10 +30,10 @@ class DiscoverButtons extends React.Component{
         return (
             <div class="like-and-dislike-buttons-box">
                 <button class="like-dislike-button-outer" onClick={() => {this.swiped(false)}}>
-                    <img src="./imgs/X.svg" />
+                    <img src="./imgs/DislikeButton.svg" />
                 </button>
                 <button class="like-dislike-button-outer" onClick={() => {this.swiped(true)}}>
-                    <img src="./imgs/Heart.svg" />
+                    <img src="./imgs/LikeButton.svg" />
                 </button>
             </div>    
         )

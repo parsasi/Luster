@@ -21,9 +21,9 @@ class QuizFinish extends React.Component{
     }
     render(){
         return (
-            <div class="quizmain">
+            <div class="quizmain quiz-main-finish">
                 {this.state.finished && <Redirect to="/discovery" />}
-                <img class="quizmain_title" src="../imgs/finished.svg" />
+                <img class="quizmain_title" src="../imgs/Finished.png" />
                 <div class="quizmain_text">
                     Based on your answers, we will provide you with your best matches first.
                 </div>
