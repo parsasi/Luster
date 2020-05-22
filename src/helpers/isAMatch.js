@@ -10,14 +10,31 @@ module.exports = (database , swiper , swipee) => {
                 resolve(false)
             }
         })
-        .then(data => {
-            if(data){
-                if(data.liked){
-                    addMatch(database , data.swiper , data.swipee)
-                    .then(data => resolve(true))
-                    .catch(e => {
-                        console.log(e)
-                        reject(e)
+        .then(userOnedata => {
+            if(userOnedata){
+                if(userOnedata.liked){
+                    database.getSwipe({swiper : swipee , swipee : swiper})
+                    .then(snapshot => {
+                        if(snapshot.docs.length > 0){
+                            const userTwoData = snapshot.docs[0].data()
+                            if(userTwoData){
+                                if(userTwoData.liked){
+                                    addMatch(database , userOnedata.swiper , userOnedata.swipee)
+                                    .then(data => resolve(true))
+                                    .catch(e => {
+                                        console.log(e)
+                                        reject(e)
+                                    })
+                                }else{
+                                    resolve(false)
+                                }
+                            }
+                            else{
+                                resolve(false)
+                            }
+                        }else{
+                            resolve(false)
+                        }
                     })
                 }else{
                     resolve(false)

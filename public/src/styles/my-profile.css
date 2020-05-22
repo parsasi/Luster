@@ -38,6 +38,7 @@
 
 .profile-content {
     display: flex;
+    color:#353c58;
 }
 
 .main-profile-pic {
@@ -87,4 +88,22 @@
     text-decoration: none;
     color:black;
     line-height:50px;
+}
+
+.teal-button-box{
+    display: inline-flex;
+    padding: 15px 20px;
+    background-color: #eb6364;
+    border: none;
+    box-shadow: gray 2px 2px 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 23pt;
+    border-radius: 10px;
+    color:#ffffff;
+    cursor: pointer;
+}
+
+.teal-button-box::selection{
+    background: none;
+    color: none;
 }

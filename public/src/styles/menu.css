@@ -25,10 +25,11 @@
     text-align: center;
     font-size: x-large;
     text-decoration: none;
-    color: black;
+    color:#353c58;
     padding-bottom: 15px;
     position: relative;
     left: -20px;
+    font-family: 'Muli', sans-serif;
 } 
 
 .menu_links li {

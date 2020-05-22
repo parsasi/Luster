@@ -25,11 +25,13 @@
     font-size: 30pt;
     font-weight: 700;
     margin-bottom: 30px;
+    color:#353c58;
 }
 
 .privacy_msg {
     display: flex;
     flex-direction: column;
     font-size: 15pt;
+    color:#353c58;
     padding-bottom: 15px;
 }

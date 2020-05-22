@@ -18,6 +18,7 @@
     display: flex;
     justify-content: space-evenly;
     overflow: hidden;
+    color:#353c58;
 }
 
 .like-and-dislike-buttons-box {

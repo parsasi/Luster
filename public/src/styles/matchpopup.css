@@ -6,9 +6,7 @@
 
 .matchpopup {
     font-family: "Raleway", sans-serif;
-    display: inline-flex;
     flex-direction: column;
-    width: 40vw;
     height: 80vh;
     padding: 25px;
     padding-left: 10%;
@@ -24,6 +22,7 @@
     padding: 20px;
     border-radius: 15px;
     margin-bottom: 10px;
+    display: flex;
 }
 
 .matchpopup_text {
@@ -35,23 +34,28 @@
 }
 
 .big-teal-button-box {
-    width: 200px;
     justify-content: center;
+}
+.go-to-match{
+    text-decoration: none;
+    width:auto;
+    padding:15px 20px;
 }
 
 .continuebutton {
     align-self: flex-end;
-    position: relative;
-    top: -78px;
+}
+
+.pop-up-buttons-container{
+    display: flex;
+    justify-content: space-between;
+    color:#353c58;
 }
 
 /* INFO START */
 
 .pop-profile_info {
     margin-left: 10%;
-    position: relative;
-    top: -270px;
-    right: -300px;
 }
 
 .pop-profile_picture img {
@@ -63,6 +67,7 @@
 .pop-profile_info_name {
     font-size: 40pt;
     padding-bottom: 20px;
+    color:#353c58;
 }
 
 .pop-profile_info_desc span {
@@ -70,6 +75,30 @@
     flex-direction: column;
     font-size: 20pt;
     padding-bottom: 20px;
+    color:#353c58;
 }
 
 /* INFO END */
+
+
+.big-teal-button-box {
+    display: inline-flex;
+    padding: 15px 40px;
+    background-color: #eb6364;
+    box-shadow: gray 2px 2px 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20pt;
+    border-radius: 10px;
+    color:#ffffff;
+    cursor: pointer;
+    min-width:auto !important;
+}
+
+.big-teal-button-box::selection{
+    background: none;
+    color: none;
+}
+
+.pop-up-profile-picture-img{
+    filter: blur(10px);
+}

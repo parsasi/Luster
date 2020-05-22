@@ -8,10 +8,10 @@ This app uses [ AirBnb javascript style guide ](https://github.com/adobeio/style
 ## Team
 Lustr is articulated, designed and developed by:
 - Parsa Safavi: Lead Developer. Resposible for developing the back-end and front-end React.
-- Megan Holmes: Project Manager. Resposible for orchestrating the team, as well as the front-end design.
-- Caleb Teerling: Front-end developer. Responsible for a substantial part of the front-end design.
-- Evelyn Zhao: Design Team Member. Responbible for preparing the styleguid, as well as the competition analysis. 
-- Tanisha Patel: Design Team Member. Responbible for preparing the styleguid, as well as the competition analysis. 
+- Megan Holmes: Project Manager and front-end developer. Worked on project planning and coding the front-end of the app.
+- Caleb Teerling: Front-end Developer. Worked on developing the front-end html and CSS code.
+- Evelyn Zhao: UI designer. Worked on on the visual components of the app.
+- Tanisha Patel: UI designer. Worked on the design aspect of the app.
 
 ## Communication methods
 We communicated using [Slack](https://slack.com/) throughout the project. In-person meetings were held bi-weekly, before social-destancing was announced neccessery, during the 2020 covid-19 outbreak. As the situation grew tighter, due to covid-19, team-work became harder for the team members. Metting in-person was out of the question. Yet, our team managed to keep the each other informed, and on top of the work. We constantly communicated and readjusted throughout the project, despite the new situation, we had to get used to. We regularly touched bases and made sure that each of us knew what the each member is working on. Also, [Zoom Video Conferencing](zoom.us) was our tool for having online meetings.

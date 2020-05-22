@@ -25,12 +25,14 @@
     font-size: 30pt;
     font-weight: 700;
     margin-bottom: 30px;
+    color:#353c58;
 }
 
 .faq_msg {
     display: flex;
     flex-direction: column;
     font-size: 15pt;
+    color:#353c58;
 }
 
 .faq_msg h3 {
