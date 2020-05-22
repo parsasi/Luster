@@ -6,11 +6,11 @@ export default (props) => (
         <div class="profile">
             <div class="profile_pictures">
                 <div class="profile_pictures_main">
-                    <img src="imgs/testimgs/kevinprof.png" />
+                    {props.user.image ? <img draggable={false} src={props.user.image} /> : <img draggable={false} src="./imgs/avatar.png" />}
                 </div>
                 <div class="profile_pictures_other">
-                    <img src="imgs/testimgs/kevin2.jpg" />
-                    <img src="imgs/testimgs/kevin3.jpg" />
+                    <img draggable={false} src="./imgs/avatar.png" />
+                    <img draggable={false} src="./imgs/avatar.png" />
                 </div>
             </div>
             <div class="profile_info">

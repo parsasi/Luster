@@ -29,12 +29,16 @@
     width: 200px;
     border-radius: 30px;
     padding-bottom: 5px;
+    background:#ffffff;
+    filter : blur(10px)
 }
 
 .profile_pictures_other img {
     width: 100px;
     height: 100px;
     border-radius: 30px;
+    background:#ffffff;
+    filter : blur(10px)
 }
 
 /* IMAGES END */
